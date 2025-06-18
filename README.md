@@ -1,15 +1,16 @@
 # 🎡 High-Level Design (HLD) Complete Roadmap with Resources
 
-🚀 Welcome to the ultimate **HLD resources + roadmap** — one-stop solution to master **High-Level Design** for interviews, designing scalable systems, and production-grade architectures.
+🚀🚀 Welcome to the all-in-one guide to master **High-Level Design (HLD)**.
 
-Whether you're preparing for **system design interviews**, building your next **SaaS or distributed system**, or leading **architecture discussions**, this roadmap covers every essential concept and resource.
+
+Whether you're preparing for **system design interviews**, building your next **SaaS or distributed system**, or leading **architecture discussions**, this repo has you covered.
 
 ---
 
 ## 📘 Table of Contents
 
 1. [🔍 What is HLD?](#-what-is-hld)
-2. [🧩 Components of HLD](#-components-of-hld)
+2. [🔩 What does HLD comprise?](#-what-does-hld-comprise)
 3. [🏛️ System Design Fundamentals](#-system-design-fundamentals)
 4. [🌐 Networking & Communication](#-networking--communication)
 5. [🪜 Load Balancing & Caching](#-load-balancing--caching)
@@ -28,26 +29,33 @@ Whether you're preparing for **system design interviews**, building your next **
 
 ## 🔍 What is HLD?
 
-High-Level Design (HLD) defines the **overall system architecture**. It focuses on:
-- Service interactions
-- Component responsibilities
-- Scalability & deployment considerations
-- External interfaces
-- Performance, availability, reliability
+High-Level Design (HLD) defines the overall architecture and structure of the system — like viewing the system from 10,000 feet above. It focuses on how different subsystems and services interact to achieve business goals, without delving into class-level implementation.
 
-🧠 It answers: *How does the system look from 10,000 feet above?*
+A well-thought HLD ensures your system is scalable, resilient, maintainable, and easy to evolve.
+
+
+[Learn More →](https://www.geeksforgeeks.org/system-design/what-is-high-level-design-learn-system-design/)
 
 ---
 
-## 🧩 Components of HLD
+## 🔩 What does HLD comprise?
 
-- System Overview & Use Cases
-- Component & Service Diagram
-- Data Flow / Sequence Diagrams
-- API Interfaces
-- Database Design (High-Level)
-- Deployment & Scaling Strategy
-- Caching, Queues, Security Layers
+High-Level Design (HLD) captures the macro architecture — how different components fit together and interact to meet system goals. 
+
+It primarily focuses on the following key areas
+
+- 💼 Component Responsibilities
+- 💬 Inter-Component Communication
+- 🏛️ Architecture Style
+- 🌍 Database & Storage Decisions
+- 📺 Caching Strategy
+- 🔐 Security Considerations
+- 💪 Fault Tolerance & Resilience
+- 📈 Scalability and Availabilty
+- 🤖 Monitoring & Observability
+- 🧭 Deployment & Infrastructure Overview
+- ⌛ Testing Strategy at the System Level
+
 
 ---
 
