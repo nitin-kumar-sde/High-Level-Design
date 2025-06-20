@@ -59,17 +59,43 @@ It primarily focuses on the following key areas
 
 ---
 
-## 🏛️ System Design Fundamentals
+## ⚙️ Asynchronous Processing 
 
-- Functional vs Non-functional requirements
-- Latency, throughput, availability
-- Read-heavy vs write-heavy workloads
-- Sync vs async communication
+In high-performance, distributed systems, **asynchronous processing** is a foundational pattern that improves **responsiveness**, **scalability**, and **fault isolation** by offloading non-critical or time-intensive operations to background workflows.
 
-📘 Resources:
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
+Instead of executing every task inline (synchronously), asynchronous systems **defer certain tasks**, allowing the system to respond immediately and handle deferred work independently.
 
+### 🧠 Common Use Cases
+
+- **🎥 Time-Intensive Tasks** - Used when operations take too long to complete inline (e.g., file processing, ML inference).
+
+- **🤖 Background Jobs** - For tasks that don’t require immediate user feedback (e.g., sending emails, notifications).
+
+- **⌛ Load Buffering** - Helps absorb high traffic spikes and smooth load before hitting downstream systems.
+
+- **⚛︎ Service Decoupling** - Allows independent scaling, deployment, and failure isolation between producers and consumers.
+
+
+### 💌 Message Queues / Brokers
+
+A **Message Queue** (or **Message Broker**) is a system component that enables **asynchronous communication** between decoupled services by allowing messages to be placed in a queue by producers and consumed by consumers at their own pace.
+
+This decoupling ensures that services remain **resilient**, **scalable**, and **non-blocking**, especially under heavy load or varying processing speeds.
+
+[Learn More →](https://imehboob.medium.com/message-queue-101-your-ultimate-guide-to-understand-message-queue-b2256961ab01)
+
+### 📦 Common Message Brokers
+
+| Broker        | Description                                                    |
+|---------------|----------------------------------------------------------------|
+| [RabbitMQ](https://www.rabbitmq.com/) | Traditional queue-based system, supports complex routing       |
+| [Amazon SQS](https://aws.amazon.com/sqs/)| Fully managed, scalable message queue by AWS                |
+
+
+### 📘 Resources
+
+- [Message Queues](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
+- [Streams]()
 ---
 
 ## 🌐 Networking & Communication
