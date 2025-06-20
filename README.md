@@ -91,11 +91,24 @@ This decoupling ensures that services remain **resilient**, **scalable**, and **
 | [RabbitMQ](https://www.rabbitmq.com/) | Traditional queue-based system, supports complex routing       |
 | [Amazon SQS](https://aws.amazon.com/sqs/)| Fully managed, scalable message queue by AWS                |
 
+### 🌊 Message Streams
+
+A **Message Stream** enables continuous, ordered, and real-time flow of data between services. Unlike queues, where messages are removed after consumption, streams retain data for a fixed duration, allowing multiple consumers to independently read messages at their own pace.
+
+[Learn More →](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
+
+| Stream        | Description                                                    |
+|---------------|----------------------------------------------------------------|
+| [Apache Kafka](https://kafka.apache.org/) | Distributed event streaming platform, supports high-throughput, real-time data pipelines |
+| [Amazon Kinesis](https://aws.amazon.com/kinesis/) | Managed real-time data streaming service on AWS, ideal for analytics and ingestion |
+
+
 
 ### 📘 Resources
 
 - [Message Queues](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
-- [Streams]()
+- [Streams](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
+  
 ---
 
 ## 🌐 Networking & Communication
