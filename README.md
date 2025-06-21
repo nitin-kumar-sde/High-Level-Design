@@ -11,7 +11,7 @@ Whether you're preparing for **system design interviews**, building your next **
 
 1. [🔍 What is HLD?](#-what-is-hld)
 2. [🔩 What does HLD comprise?](#-what-does-hld-comprise)
-3. [🏛️ System Design Fundamentals](#-system-design-fundamentals)
+3. [🛠 Asynchronous Processing](#-asynchronous-processing)
 4. [🌐 Networking & Communication](#-networking--communication)
 5. [🪜 Load Balancing & Caching](#-load-balancing--caching)
 6. [💾 Databases & Storage](#-databases--storage)
@@ -59,7 +59,7 @@ It primarily focuses on the following key areas
 
 ---
 
-## ⚙️ Asynchronous Processing 
+## 🛠 Asynchronous Processing 
 
 In high-performance, distributed systems, **asynchronous processing** is a foundational pattern that improves **responsiveness**, **scalability**, and **fault isolation** by offloading non-critical or time-intensive operations to background workflows.
 
@@ -84,7 +84,13 @@ This decoupling ensures that services remain **resilient**, **scalable**, and **
 
 [Learn More →](https://imehboob.medium.com/message-queue-101-your-ultimate-guide-to-understand-message-queue-b2256961ab01)
 
-### 📦 Common Message Brokers
+#### ♻️ When to Use 
+
+- ⚛ Consumers process messages asynchronously and independently
+- 🔗 Decoupling between data producers and consumers
+- 📢 For tasks that don’t require immediate action
+  
+#### 📦 Common Message Brokers
 
 | Broker        | Description                                                    |
 |---------------|----------------------------------------------------------------|
@@ -97,17 +103,45 @@ A **Message Stream** enables continuous, ordered, and real-time flow of data bet
 
 [Learn More →](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
 
+#### ♻️ When to Use 
+
+- ⚛ Consumers process messages asynchronously and independently
+- 🔗 Multiple consumer groups process messages simultaneously
+- 📢 For tasks that don’t require immediate action
+
+  
+#### 📦 Common Message Streams
 | Stream        | Description                                                    |
 |---------------|----------------------------------------------------------------|
 | [Apache Kafka](https://kafka.apache.org/) | Distributed event streaming platform, supports high-throughput, real-time data pipelines |
 | [Amazon Kinesis](https://aws.amazon.com/kinesis/) | Managed real-time data streaming service on AWS, ideal for analytics and ingestion |
 
 
+### 📡 Real-Time Pub/Sub
+
+Real-Time Pub/Sub (Publish–Subscribe) is a communication pattern where senders (publishers) broadcast messages to topics, and receivers (subscribers) get updates instantly, without knowing each other.
+
+It enables loose coupling, scalable fan-out, and real-time delivery, powering systems like chat apps, collaborative editors, live dashboards, and IoT devices.
+
+[Learn More →](https://medium.com/@kyberneees/introducing-realtime-pub-sub-enabling-developers-to-build-the-modern-web-with-realtime-pub-sub-f18cee59c637)
+
+#### ♻️ When to Use 
+
+- ⚛ Instant updates to multiple consumers (e.g., live feed, multiplayer game)
+- 🔗 Decoupling between data producers and consumers
+- 📢 Asynchronous communication with minimal delay
+
+#### 📦 Common Message Pub Sub
+| Stream        | Description                                                    |
+|---------------|----------------------------------------------------------------|
+| [Reddis PubSub](https://redis.io/docs/latest/develop/interact/pubsub/) | Lightweight, in-memory pub/sub system for low-latency, ephemeral message delivery |
+| [Amazon SNS](https://aws.amazon.com/sns/) | Fully managed pub/sub service on AWS for real-time event broadcasting to multiple endpoints |
 
 ### 📘 Resources
 
 - [Message Queues](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
 - [Streams](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
+- [Real time Pub Sub](https://aws.amazon.com/what-is/pub-sub-messaging/)
   
 ---
 
