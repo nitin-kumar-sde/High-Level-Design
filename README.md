@@ -12,18 +12,19 @@ Whether you're preparing for **system design interviews**, building your next **
 1. [🔍 What is HLD?](#-what-is-hld)
 2. [🔩 What does HLD comprise?](#-what-does-hld-comprise)
 3. [🛠 Asynchronous Processing](#-asynchronous-processing)
-4. [🌐 Networking & Communication](#-networking--communication)
-5. [🪜 Load Balancing & Caching](#-load-balancing--caching)
-6. [💾 Databases & Storage](#-databases--storage)
-7. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
-8. [📦 Microservices & Monoliths](#-microservices--monoliths)
-9. [📤 APIs & Contracts](#-apis--contracts)
-10. [⚙️ Message Queues & Event-Driven Design](#-message-queues--event-driven-design)
-11. [🔐 Security & Authentication](#-security--authentication)
-12. [📈 Scalability & Performance](#-scalability--performance)
-13. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
-14. [🛠 Design Practice Problems](#-design-practice-problems)
-15. [📚 Recommended Books & Courses](#-recommended-books--courses)
+4. [💰 Caching Techniques](#-caching-techniques)
+5. [🌐 Networking & Communication](#-networking--communication)
+6. [🪜 Load Balancing & Caching](#-load-balancing--caching)
+7. [💾 Databases & Storage](#-databases--storage)
+8. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
+9. [📦 Microservices & Monoliths](#-microservices--monoliths)
+10. [📤 APIs & Contracts](#-apis--contracts)
+11. [⚙️ Message Queues & Event-Driven Design](#-message-queues--event-driven-design)
+12. [🔐 Security & Authentication](#-security--authentication)
+13. [📈 Scalability & Performance](#-scalability--performance)
+14. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
+15. [🛠 Design Practice Problems](#-design-practice-problems)
+16. [📚 Recommended Books & Courses](#-recommended-books--courses)
 
 ---
 
@@ -143,6 +144,51 @@ It enables loose coupling, scalable fan-out, and real-time delivery, powering sy
 - [Streams](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
 - [Real time Pub Sub](https://aws.amazon.com/what-is/pub-sub-messaging/)
   
+---
+
+## 💰 Caching Techniques
+
+Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
+
+[Learn More →](https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/)
+
+### 💎 Standard Terms
+| Term                 | Meaning                                              |
+| -------------------- | ---------------------------------------------------- |
+| Cache Hit        | Data found in the cache                              |
+| Cache Miss       | Data not found, fetched from source                  |
+| Cache Eviction   | Removing data when cache is full                     |
+| Cache Population | How data is loaded into cache (on demand or upfront) |
+| Cache Invalidation | Process of removing or updating stale cache entries when the source data changes |
+
+### 🪙 Cache Population Strategies
+**Lazy Loading**
+Cache is populated only on first request (miss) → then stored.
+
+**Eager Loading**
+- Server writes to DB and cache both
+- Asychronous system can populate cache 
+
+###  🗓️ Levels of Caching
+| Level                 | Example                         | Use Case                                        |
+| --------------------- | ------------------------------- | ----------------------------------------------- |
+| Client-Side       | Browser cache, localStorage     | Static assets, previous API results             |
+| CDN-Level         | Cloudflare, Akamai              | Images, videos, HTML – reduces edge latency     |
+| App/Service-Level | Redis, Memcached                | Frequently accessed DB results, config, session |
+| Database-Level    | Query cache, materialized views | Reduces expensive joins/aggregates              |
+
+### 🏵️ Scaling Distributed Caching
+| Strategy                         | Description                                   |
+| -------------------------------- | --------------------------------------------- |
+| Sharding                    | Divide cache across nodes (based on key hash) |
+| Replication             | Redundancy for high availability              |
+| TTL & Expiry            | Control staleness and memory usage            |
+| Consistent Hashing           | Smooth rebalancing during scale-up/down       |
+|Write-through / Write-behind | Control how writes sync with DB               |
+
+### 📘 Resources
+- [Caching Tutorial](https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01)
+
 ---
 
 ## 🌐 Networking & Communication
