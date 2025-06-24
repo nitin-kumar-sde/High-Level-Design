@@ -11,21 +11,18 @@ Whether you're preparing for **system design interviews**, building your next **
 
 1. [🔍 What is HLD?](#-what-is-hld)
 2. [🔩 What does HLD comprise?](#-what-does-hld-comprise)
-3. [🛠 Asynchronous Processing](#-asynchronous-processing)
-4. [💰 Caching Techniques](#-caching-techniques)
-5. [👒 Databases](#-databases)
-6. [🌐 Networking & Communication](#-networking--communication)
-7. [🪜 Load Balancing & Caching](#-load-balancing--caching)
-8. [💾 Databases & Storage](#-databases--storage)
+3. [📡 Networking & Communication](#-networking--communication)
+4. [🛠 Asynchronous Processing](#-asynchronous-processing)
+5. [🏛️ Architectural Paradigms](#-architectural-paradigms)
+6. [💰 Caching Techniques](#-caching-techniques)
+7. [👒 Databases](#-databases)
+8. [🧮 Consistent Hashing](#-consistent-hashing)
 9. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
-10. [📦 Microservices & Monoliths](#-microservices--monoliths)
-11. [📤 APIs & Contracts](#-apis--contracts)
-12. [⚙️ Message Queues & Event-Driven Design](#-message-queues--event-driven-design)
-13. [🔐 Security & Authentication](#-security--authentication)
-14. [📈 Scalability & Performance](#-scalability--performance)
-15. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
-16. [🛠 Design Practice Problems](#-design-practice-problems)
-17. [📚 Recommended Books & Courses](#-recommended-books--courses)
+10. [🔐 Security & Authentication](#-security--authentication)
+11. [📈 Scalability & Performance](#-scalability--performance)
+12. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
+13. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
+14. [📚 Recommended Books](#-recommended-books--courses)
 
 ---
 
@@ -58,6 +55,12 @@ It primarily focuses on the following key areas
 - 🧭 Deployment & Infrastructure Overview
 - ⌛ Testing Strategy at the System Level
 
+
+---
+
+# 📡 Networking & Communication
+
+> TBD
 
 ---
 
@@ -147,6 +150,11 @@ It enables loose coupling, scalable fan-out, and real-time delivery, powering sy
   
 ---
 
+## 🏛️ Architectural Paradigms
+
+> TBD
+
+---
 # 💰 Caching Techniques
 
 Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
@@ -349,129 +357,9 @@ For more details of Design Schema design and other best practices, Please check 
 
 ---
 
-### 💡 HLD Insight
+[🧮 Consistent Hashing](#-consistent-hashing)
 
-- **Design indexes based on access patterns.**
-- Avoid over-indexing — it adds write overhead.
-- Use **EXPLAIN PLAN** or query analyzers to verify effectiveness.
-
-
-
----
-
-## 🧠 HLD Best Practices
-
-- Choose a **good shard key** to avoid hotspots.
-- Plan for **re-sharding** from the beginning.
-- Use sharding when single-node DB performance is maxed out.
-
-
----
-
-## 💡 In System Design Context
-
-- **ACID compliance** is critical in systems like banking, inventory, and order processing.
-- For **high availability systems**, trade-offs may lead to **BASE** (Basically Available, Soft state, Eventual consistency) models instead.
-
-
-
----
-## 🌐 Networking & Communication
-
-- HTTP, WebSockets, gRPC
-- TCP vs UDP
-- DNS, CDN
-- API Gateways
-
-📘 Resources:
-- [Networking 101](https://roadmap.sh/networking)
-
----
-
-
-
-## 🪜 Load Balancing & Caching
-
-- Horizontal vs Vertical Scaling
-- Load Balancers (HAProxy, Nginx, ALB)
-- CDN: Cloudflare, Akamai
-- Caching: Redis, Memcached, CDN edge
-
-📘 Resources:
-- [How Caching Works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
-
----
-
-## 💾 Databases & Storage
-
-- SQL vs NoSQL
-- Partitioning (Sharding)
-- Indexing & Replication
-- Data Lake & Blob Storage
-
-📘 Resources:
-- [Distributed Databases Overview](https://www.youtube.com/watch?v=etg4hNzG3xY)
-
----
-
-## ⛓️ Consistency, Availability, Partitioning (CAP)
-
-- CAP Theorem
-- Eventual vs Strong Consistency
-- Leader-Follower Replication
-- Quorum-based systems
-
-📘 Resources:
-- [CAP Theorem Explanation](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
-
----
-
-## 📦 Microservices & Monoliths
-
-- Service Discovery & Registry
-- API Gateway & BFF pattern
-- Inter-service communication (Sync vs Async)
-- Shared-nothing architecture
-
-📘 Resources:
-- [Monolith to Microservices by Sam Newman](https://samnewman.io/books/)
-
----
-
-## 📤 APIs & Contracts
-
-- REST, GraphQL, gRPC
-- API Rate Limiting & Throttling
-- Versioning APIs
-- OpenAPI/Swagger
-
-📘 Tools:
-- [Swagger Editor](https://editor.swagger.io/)
-- [Postman](https://www.postman.com/)
-
----
-
-## ⚙️ Message Queues & Event-Driven Design
-
-- Kafka, RabbitMQ, SQS
-- Producer-Consumer Model
-- Pub/Sub vs Message Bus
-- Event Sourcing
-
-📘 Resources:
-- [Kafka in a Nutshell](https://kafka.apache.org/)
-
----
-
-## 🔐 Security & Authentication
-
-- OAuth 2.0, JWT, SAML
-- TLS/SSL
-- API key vs OAuth
-- Rate limiting & Abuse Protection
-
-📘 Resources:
-- [JWT Guide](https://jwt.io/introduction)
+> TBD
 
 ---
 
@@ -487,6 +375,31 @@ For more details of Design Schema design and other best practices, Please check 
 
 ---
 
+## ⛓️ Consistency, Availability, Partitioning (CAP)
+
+- CAP Theorem
+- Eventual vs Strong Consistency
+- Leader-Follower Replication
+- Quorum-based systems
+
+📘 Resources:
+- [CAP Theorem Explanation](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+
+---
+
+## 🔐 Security & Authentication
+
+- OAuth 2.0, JWT, SAML
+- TLS/SSL
+- API key vs OAuth
+- Rate limiting & Abuse Protection
+
+📘 Resources:
+- [JWT Guide](https://jwt.io/introduction)
+
+---
+
+
 ## 🔁 Fault Tolerance & Redundancy
 
 - Failover Strategies
@@ -499,17 +412,27 @@ For more details of Design Schema design and other best practices, Please check 
 
 ---
 
-## 🛠 Design Practice Problems
+## Rate Limiting and  Throttling 
+- Client-side vs server-side rate limiting
+- Burst control and fair usage
+- Message queues (Kafka, RabbitMQ, SQS)
+- Asynchronous processing with background jobs
+- Retry and dead-letter queue (DLQ) strategies
 
-- Design YouTube / TikTok
-- Design WhatsApp / Slack
-- Design Ride-Sharing System (Uber)
-- Design URL Shortener (Bit.ly)
-- Design Instagram or Pinterest
+---
 
-📘 Practice:
-- [Excalidraw for diagrams](https://excalidraw.com/)
-- [ByteByteGo Newsletter](https://bytebytego.com/)
+## 10. 📊 Monitoring and Observability 
+- Metrics (latency, throughput, error rate)
+- Logs vs traces vs metrics
+- Tools: Prometheus, Grafana, ELK, Datadog
+- Health checks and alerting
+- SLOs, SLAs, SLIs
+
+---
+
+## ⚖️ Trade Offs & Design Decisions
+
+> TBD
 
 ---
 
