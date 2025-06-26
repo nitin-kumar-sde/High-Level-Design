@@ -280,12 +280,12 @@ A monolithic application is built as a **single, tightly coupled, and indivisibl
 
 ### 💡 Key Characteristics
 
-* **Single Unit** 📦 - One large, comprehensive application.
-* **Shared Everything** 🔗 - Single codebase, single deployment, single database.
-* **Simpler Start** 🌱 - Easy to develop and deploy initially.
-* **Global Scaling** 🌍 - Scales by duplicating the entire application.
-* **High Interdependency** 🕸️ - Changes in one part can impact the whole.
-* **Slower Evolution (at scale)** 🐌 - Can become unwieldy to maintain and update as it grows.
+* 📦 **Single Unit** - One large, comprehensive application.
+* 🔗 **Shared Everything** - Single codebase, single deployment, single database.
+* 🌱 **Simpler Start** - Easy to develop and deploy initially.
+* 🌍 **Global Scaling** - Scales by duplicating the entire application.
+* 🕸️ **High Interdependency**  - Changes in one part can impact the whole.
+* 🐌 **Slower Evolution (at scale)** - Can become unwieldy to maintain and update as it grows.
 
 ## 🧩 Microservices Architecture 
 
@@ -293,12 +293,12 @@ Microservices architecture designs an application as a **collection of small, in
 
 ### 💡 Key Characteristics
 
-* **Independent Services** ⚙️ - Each focuses on a specific function (e.g., "User Service").
-* **Autonomous Units** 🚀 - Independent development, deployment, and scaling.
-* **Decentralized Data** 🏘️ - Each service typically owns its own database.
-* **Network Communication** 💬 - Services talk via APIs (REST, RPC) or message queues.
-* **Technology Flexibility** 🌈 - Different services can use different tech stacks.
-* **Increased Operational Overhead** ⚠️ - More components to manage, monitor, and debug.
+* ⚙️ **Independent Services** - Each focuses on a specific function (e.g., "User Service").
+* 🚀 **Autonomous Units**  - Independent development, deployment, and scaling.
+* 🏘️ **Decentralized Data**  - Each service typically owns its own database.
+* 💬 **Network Communication** - Services talk via APIs (REST, RPC) or message queues.
+* 🌈 **Technology Flexibility** - Different services can use different tech stacks.
+* ⚠️ **Increased Operational Overhead**  - More components to manage, monitor, and debug.
 
 
 ## 📊 Comparison Monolith vs. Microservices
@@ -317,6 +317,42 @@ Microservices architecture designs an application as a **collection of small, in
 
 [Learn More →](https://www.geeksforgeeks.org/monolithic-vs-microservices-architecture/)
 
+## 🥊 Event-Driven Architecture (Choreography)
+
+**Event-Driven Architecture (EDA)** is an architectural paradigm where services communicate indirectly through **events**. Instead of making direct requests, services publish events when something significant happens, and other services subscribe to and react to these events.
+
+### 💡 Key Characteristics
+
+- ⏳ **Asynchronous Communication** - Producers don't wait for consumers; events are processed independently.
+- 🎭 **Decoupled Services** - Services don't need to know about each other directly, only about the events.
+- ♟️ **Real-time Responsiveness** - Ideal for immediate reactions to system changes.
+- 🪁 **Scalable & Resilient** - Individual services can fail or scale without impacting the entire flow.
+- 🚌 **Event Broker/Bus** - A central component (like Kafka or RabbitMQ) mediates events between producers and consumers.
+
+## 🤹‍♀️ Workflow (Orchestration)
+
+A **centralized orchestrator (or "conductor" service)** explicitly controls and coordinates the sequence of steps in a business process. It knows the entire workflow, telling each service exactly what to do and when.
+
+### 💡 Key Characteristics
+
+- 🪜 **Sequence of Steps** - Defined order of operations.
+- 🕰️ **Often Long-Running** - Can span minutes, hours, or even days.
+- 🤝 **Involve Multiple Services** - Typically requires interaction between several distinct components or microservices.
+- 💾 **Require State Management** - Progress needs to be tracked to resume or compensate for failures.
+- ✅ **Business Outcome-Oriented** - Designed to achieve a specific functional result (e.g., "process an order").
+
+## 📊 Comparison Orchestration vs Choreography
+
+| Feature             | Orchestration                                                       | Choreography                                                         |
+| :------------------ | :------------------------------------------------------------------ | :------------------------------------------------------------------ |
+| **Control** | **🧠 Centralized** Dedicated orchestrator service manages flow. | **🏘️ Decentralized** Services react to events autonomously. |
+| **Flow Visibility** | **✅ Clear** Easy to see entire workflow in one place.              | **🤯 Distributed**  Harder to visualize end-to-end flow.           |
+| **Observability/Tracing** | **🔍 Easier**  Centralized point for monitoring and tracing workflow state. | **🧩 Challenging**  Requires robust distributed tracing tools; fragmented view. |
+| **Coupling** | **🔗 Tighter**  Orchestrator is coupled to each service it calls. | **🤝 Looser** Services only coupled to the event contract.         |
+| **Resilience** | Orchestrator failure can **💥 halt workflow**.                        | More **✨ resilient** Failures are often isolated.              |
+| **Complexity** | Easier for **simple, fixed workflows** to start.                      | More complex to design and debug **distributed flows** at scale.   |
+
+[Learn More →](https://www.geeksforgeeks.org/system-design/orchestration-vs-choreography/)
 
 ---
 
