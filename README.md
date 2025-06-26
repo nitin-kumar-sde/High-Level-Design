@@ -17,7 +17,7 @@ Whether you're preparing for **system design interviews**, building your next **
 6. [💰 Caching Techniques](#-caching-techniques)
 7. [👒 Databases](#-databases)
 8. [🧮 Consistent Hashing](#-consistent-hashing)
-9 . [📈 Scalability & Performance](#-scalability--performance)
+9. [📈 Scalability & Performance](#-scalability--performance)
 10. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
 11. [🔐 Security & Authentication](#-security--authentication)
 12. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
