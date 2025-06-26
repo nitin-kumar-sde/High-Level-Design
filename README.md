@@ -83,6 +83,8 @@ Example: File sharing (BitTorrent), blockchain networks.
 
 Protocols are the essential rules governing how computers communicate and exchange data.
 
+### ⏱️ HTTP 
+
 **HTTP (Hypertext Transfer Protocol)** is the primary web protocol. It uses a client-server request-response model to exchange web content. It's fundamentally stateless, treating each interaction independently
 
 ### Example
@@ -106,9 +108,19 @@ Content-Type: text/html
 ```
 
 
+### 🔌 WebSockets
 
+**WebSockets** provide a persistent, **full-duplex** communication channel between a client and a server over a **single, long-lived TCP connection**. They enable instant, two-way data exchange, unlike HTTP's request-response cycle.
 
+#### 📒 Key Characteristics 
 
+* **⚡ Real-time:** Enables instant data flow.
+* **↔️ Bi-directional:** Both client and server can send messages anytime.
+* **🤝 Persistent:** Connection stays open after an initial HTTP handshake.
+* **💨 Low Latency:** Reduced overhead for continuous communication.
+* **Efficiency:** Smaller message frames post-handshake.
+
+[Learn More →](https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/)
 
 
 ---
