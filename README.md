@@ -20,7 +20,7 @@ Whether you're preparing for **system design interviews**, building your next **
 9. [📈 Scalability & Performance](#-scalability--performance)
 10. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
 11. [🔐 Security & Authentication](#-security--authentication)
-12. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
+12. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 13. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
 14. [📚 Recommended Books](#-recommended-books--courses)
 
@@ -711,24 +711,51 @@ To enforce access control policies, ensuring users can only perform actions and 
 ---
 
 
-## 🔁 Fault Tolerance & Redundancy
+# ⛺ Fault Tolerance & Resiliency
 
-- Failover Strategies
-- Heartbeats & Health Checks
-- Redundancy & Replication
-- Circuit Breakers & Retry Logic
+In any complex system, failures are not a matter of "if," but "when."
 
-📘 Resources:
-- [Netflix Hystrix (Archived but Gold)](https://github.com/Netflix/Hystrix)
+**Fault Tolerance** and **Resiliency** are about designing systems that can continue to operate correctly even when parts of them fail. While often used interchangeably, they have subtle distinctions:
 
----
+- **🕹️ Fault Tolerance** - The ability of a system to **continue operating without interruption** when one or more of its components fail. It's about designing redundancy and mechanisms to mask failures.
 
-## Rate Limiting and  Throttling 
-- Client-side vs server-side rate limiting
-- Burst control and fair usage
-- Message queues (Kafka, RabbitMQ, SQS)
-- Asynchronous processing with background jobs
-- Retry and dead-letter queue (DLQ) strategies
+- **✨ Resiliency** The ability of a system to **recover gracefully from failures** and maintain an acceptable level of service. It's a broader concept that includes fault tolerance, but also emphasizes recovery, adaptability, and degradation.
+
+
+## ♟️ Common Strategies
+
+### 👯 Redundancy
+
+Having duplicate components (servers, databases, network paths) ready to take over if a primary one fails.
+
+### 🩺 Health Checks & Monitoring
+
+- Regularly checking the status of services and infrastructure components to detect failures or degraded performance quickly.
+
+### 🔄 Failover & Failback
+
+- **🎨 Failover** - The automatic process of switching from a primary, failed component to a secondary, healthy redundant component.
+- **🧩 Failback** - The process of switching operations back to the original primary component after it has been repaired or recovered.
+
+### ⏳🔄 Timeouts & Retries
+
+- **Timeouts:** Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
+- **Retries:** Attempting a failed operation again.
+    - **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
+    - **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
+
+### ⚡️ Circuit Breaker Pattern
+
+* **Concept:** Prevents a system from repeatedly trying to access a failing service, thus preventing cascading failures and giving the failing service time to recover.
+* **How it Works:** Monitors calls to a service. If calls fail repeatedly, the circuit "trips," and subsequent calls are immediately rejected (or rerouted) without hitting the failing service. After a timeout, it allows a few test calls to see if the service has recovered.
+
+### 🌍 Disaster Recovery (DR) 
+
+A plan for recovering system functionality and data in the event of a major catastrophic failure (e.g., entire data center outage, natural disaster).
+
+Multi-region deployments, regular backups, data replication to remote locations.
+
+[Read More →](https://medium.com/@rohanraman6/resilience-and-fault-tolerance-in-modern-applications-a-practical-implementation-43aa7d635bbb)
 
 ---
 
