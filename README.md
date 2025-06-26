@@ -23,7 +23,7 @@ Whether you're preparing for **system design interviews**, building your next **
 12. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 13. [👁️ Observability & Monitoring](#-observability--monitoring)
 14. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-15. 15. [📚 Recommended Books](#-recommended-books--courses)
+15. [📚 Recommended Books](#-recommended-books--courses)
 
 ---
 
@@ -689,17 +689,17 @@ To enforce access control policies, ensuring users can only perform actions and 
 **Rate Limiting** is a strategy for **controlling the rate at which an API or service accepts requests** from a user, IP address, or application over a defined time window.
 
 ### 🫧 Key Benifits
-- **Prevent Abuse:** - Mitigate brute-force attacks, DoS/DDoS attacks by malicious clients.
-- **Ensure Fair Usage:** - Prevent a single user or client from monopolizing system resources.
-- **Protect Downstream Services:** - Shield backend services from being overwhelmed.
+- **Prevent Abuse** - Mitigate brute-force attacks, DoS/DDoS attacks by malicious clients.
+- **Ensure Fair Usage** - Prevent a single user or client from monopolizing system resources.
+- **Protect Downstream Services** - Shield backend services from being overwhelmed.
  
       
 ### 🧳 Common Algorithms
 - **🪟 Fixed Window Counter** - Simple; counts requests in a fixed time window (e.g., 100 requests per minute). Prone to "bursty" traffic at window edges.
 - **🏠 Sliding Window Log** - Tracks timestamps of each request. Most accurate but resource-intensive.
 - **🏢 Sliding Window Counter** - Hybrid; combines fixed windows but uses previous window's rate to smooth out bursts.
-- **🪙 Token Bucket ** - A "bucket" of tokens is refilled at a fixed rate. Each request consumes a token. Allows for bursts up to bucket capacity.
-- **💧 Leaky Bucket ** - Requests enter a queue (the "bucket") and are processed at a constant rate. Excess requests overflow/are dropped. Smooths out bursts.
+- **🪙 Token Bucket** - A "bucket" of tokens is refilled at a fixed rate. Each request consumes a token. Allows for bursts up to bucket capacity.
+- **💧 Leaky Bucket** - Requests enter a queue (the "bucket") and are processed at a constant rate. Excess requests overflow/are dropped. Smooths out bursts.
 
 > 🧠 Note - Typically implemented at the API Gateway, Load Balancer, or specific service level.
 
@@ -815,7 +815,7 @@ Building any system, especially a distributed one, is fundamentally about making
 
 Here are some of the most common and critical trade-offs encountered in system design
 
-## 🆚 Availability vs. Consistency (CAP Theorem) 
+## 🤹 Availability vs. Consistency (CAP Theorem) 
 
 As we've extensively discussed, in a distributed system experiencing a network partition (an inevitable reality), you must choose between always being responsive (**Availability**) or always returning the most up-to-date, synchronized data (**Consistency**).
 
@@ -843,7 +843,7 @@ Optimizing for one can sometimes come at the expense of the other.
 
 🤔 For user search suggestions or trending topics, speed beats perfect accuracy. For financial reports or crucial data analytics, accuracy is paramount.
 
-### 💰 Cost vs. Performance/Scalability 
+## 💰 Cost vs. Performance/Scalability 
 
 Investing more money into hardware, infrastructure, and specialized services can significantly improve performance and scalability, but budget is always a constraint.
 
