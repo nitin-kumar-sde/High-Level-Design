@@ -739,17 +739,18 @@ Having duplicate components (servers, databases, network paths) ready to take ov
 
 ### ⏳🔄 Timeouts & Retries
 
-- **Timeouts:** Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
-- **Retries:** Attempting a failed operation again.
+- **Timeouts** - Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
+- **Retries** - Attempting a failed operation again.
     - **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
     - **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
 
 ### ⚡️ Circuit Breaker Pattern
 
-* **Concept:** Prevents a system from repeatedly trying to access a failing service, thus preventing cascading failures and giving the failing service time to recover.
-* **How it Works:** Monitors calls to a service. If calls fail repeatedly, the circuit "trips," and subsequent calls are immediately rejected (or rerouted) without hitting the failing service. After a timeout, it allows a few test calls to see if the service has recovered.
+Prevents a system from repeatedly trying to access a failing service, thus preventing cascading failures and giving the failing service time to recover.
 
-### 🌍 Disaster Recovery (DR) 
+Monitors calls to a service. If calls fail repeatedly, the circuit "trips," and subsequent calls are immediately rejected (or rerouted) without hitting the failing service. After a timeout, it allows a few test calls to see if the service has recovered.
+
+### 🌍 Disaster Recovery
 
 A plan for recovering system functionality and data in the event of a major catastrophic failure (e.g., entire data center outage, natural disaster).
 
