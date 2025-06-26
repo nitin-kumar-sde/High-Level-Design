@@ -112,7 +112,7 @@ Content-Type: text/html
 
 **WebSockets** provide a persistent, **full-duplex** communication channel between a client and a server over a **single, long-lived TCP connection**. They enable instant, two-way data exchange, unlike HTTP's request-response cycle.
 
-#### 📒 Key Characteristics 
+#### 💡 Key Characteristics 
 
 * **⚡ Real-time:** Enables instant data flow.
 * **↔️ Bi-directional:** Both client and server can send messages anytime.
@@ -122,6 +122,48 @@ Content-Type: text/html
 
 [Learn More →](https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/)
 
+## 📇 Inter-Service Communication Styles
+
+### 💼 REST (Representational State Transfer)
+
+**REST** is an **architectural style** for designing networked applications, primarily leveraging **HTTP**. It defines a standardized, stateless way for systems to interact with **resources** identified by **URIs** (URLs).
+
+#### 💡 Key Characteristics 
+
+* **Client-Server:** Clear separation for independent scaling.
+* **Stateless:** Every request is self-contained; server remembers no prior client context.
+* **Uniform Interface:** Consistent interaction via standard HTTP methods and resource identification.
+* **Cacheable:** Responses indicate if they can be stored for performance.
+
+### 📮 RPC (Remote Procedure Call)
+
+**RPC (Remote Procedure Call)** is a communication paradigm that allows a program to execute a function (or "procedure") in a different address space, typically on a **remote computer**, as if it were a local function call. It aims to make inter-service communication appear seamless to the developer, abstracting away the underlying network complexities.
+
+#### 💡 Key Characteristics 
+
+* **⚡ Synchronous by Default:** Client typically waits for the remote procedure to complete and return a result.
+* **🔌 Direct Communication:** Services call each other directly.
+* **⚙️ High Performance:** Often optimized for speed, using efficient serialization (e.g., Protobuf) and transport protocols (e.g., HTTP/2 in gRPC).
+* **🌍 Language Agnostic:** Frameworks support calling procedures across different programming languages.
+* **Abstracts Networking:** Developers write code as if calling a local function; the RPC framework handles serialization, network transmission, and deserialization.
+
+[Learn More →](https://www.geeksforgeeks.org/difference-between-rest-api-and-rpc-api/)
+
+## 🪟 API Gateway
+
+An **API Gateway** acts as the **single entry point** for all external clients to access a set of backend services (especially in microservices architectures). It sits in front of your services, handling incoming requests and routing them to the appropriate destination.
+
+#### 💡 Key Characteristics
+
+* **🌐 Single Entry Point:** Consolidates multiple service endpoints into one unified API for clients.
+* **🎯 Intelligent Routing:** Directs requests to the correct backend service based on defined rules.
+* **🔐 Centralized Security:** Handles authentication, authorization, and API key validation before requests reach services.
+* **🚦 Traffic Management:** Implements rate limiting, throttling, and basic load balancing to protect backend services.
+* **🔄 Request/Response Transformation:** Modifies data formats or aggregates responses from multiple services.
+* **📊 Observability:** Provides centralized logging and monitoring for all API traffic.
+* **🛡️ Resilience:** Can incorporate circuit breakers and retry mechanisms to enhance system stability.
+
+[Learn More →](https://www.geeksforgeeks.org/system-design/what-is-api-gateway-system-design/)
 
 ---
 
