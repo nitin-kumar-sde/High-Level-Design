@@ -13,7 +13,7 @@ Whether you're preparing for **system design interviews**, building your next **
 2. [🔩 What does HLD comprise?](#-what-does-hld-comprise)
 3. [📡 Networking & Communication](#-networking--communication)
 4. [🛠 Asynchronous Processing](#-asynchronous-processing)
-5. [🏛️ Architectural Paradigms](#-architectural-paradigms)
+5. [🎪 Architectural Paradigms](#-architectural-paradigms)
 6. [💰 Caching Techniques](#-caching-techniques)
 7. [👒 Databases](#-databases)
 8. [🧮 Consistent Hashing](#-consistent-hashing)
@@ -266,14 +266,60 @@ It enables loose coupling, scalable fan-out, and real-time delivery, powering sy
 - [Message Queues](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
 - [Streams](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
 - [Real time Pub Sub](https://aws.amazon.com/what-is/pub-sub-messaging/)
-  
----
 
-## 🏛️ Architectural Paradigms
-
-> TBD
 
 ---
+
+# 🎪 Architectural Paradigms
+
+Choosing how to structure your application is a foundational decision in system design. It impacts everything from development speed and scalability to maintainability and team organization. Let's explore the primary architectural styles.
+
+## 🏰 Monolithic Architecture
+
+A monolithic application is built as a **single, tightly coupled, and indivisible unit**. All its components run within one process, sharing a single codebase and database.
+
+### 💡 Key Characteristics
+
+* **Single Unit** 📦 - One large, comprehensive application.
+* **Shared Everything** 🔗 - Single codebase, single deployment, single database.
+* **Simpler Start** 🌱 - Easy to develop and deploy initially.
+* **Global Scaling** 🌍 - Scales by duplicating the entire application.
+* **High Interdependency** 🕸️ - Changes in one part can impact the whole.
+* **Slower Evolution (at scale)** 🐌 - Can become unwieldy to maintain and update as it grows.
+
+## 🧩 Microservices Architecture 
+
+Microservices architecture designs an application as a **collection of small, independent, and loosely coupled services**, each representing a distinct business capability. They communicate over networks (APIs, messages) and can be developed, deployed, and scaled autonomously.
+
+### 💡 Key Characteristics
+
+* **Independent Services** ⚙️ - Each focuses on a specific function (e.g., "User Service").
+* **Autonomous Units** 🚀 - Independent development, deployment, and scaling.
+* **Decentralized Data** 🏘️ - Each service typically owns its own database.
+* **Network Communication** 💬 - Services talk via APIs (REST, RPC) or message queues.
+* **Technology Flexibility** 🌈 - Different services can use different tech stacks.
+* **Increased Operational Overhead** ⚠️ - More components to manage, monitor, and debug.
+
+
+## 📊 Comparison Monolith vs. Microservices
+
+| Feature          | Monolithic Architecture                                  | Microservices Architecture                               |
+| :--------------- | :------------------------------------------------------- | :------------------------------------------------------- |
+| **Structure** | Single, unified, tightly coupled application            | Collection of small, independent, loosely coupled services |
+| **Deployment** | Single deployable unit (entire application)              | Each service deployed independently                     |
+| **Scalability** | Scales entirely; scale one function = scale all          | Scales independently; scale only services under load      |
+| **Coupling** | High (components highly interdependent)                  | Low (services communicate via APIs/messages)             |
+| **Data Mgmt.** | Centralized, shared database                             | Decentralized (each service owns its data)               |
+| **Tech Stack** | Usually uniform across the entire app                    | Heterogeneous (different tech for different services)    |
+| **Complexity** | Lower *initial* complexity; higher *long-term* complexity | Higher *initial* complexity; manageable *long-term* complexity |
+| **Resilience** | Single point of failure can bring down whole app         | Fault isolation (one service failure doesn't halt others) |
+| **Team Size** | Larger, shared teams                                     | Smaller, autonomous teams per service                    |
+
+[Learn More →](https://www.geeksforgeeks.org/monolithic-vs-microservices-architecture/)
+
+
+---
+
 # 💰 Caching Techniques
 
 Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
