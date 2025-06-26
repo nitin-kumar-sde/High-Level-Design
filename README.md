@@ -809,9 +809,47 @@ It is crucial for understanding latency bottlenecks, identifying which service i
 
 ---
 
-## ⚖️ Trade Offs & Design Decisions
+# ⚖️ Trade Offs & Design Decisions
 
-> TBD
+Building any system, especially a distributed one, is fundamentally about making choices. Every architectural decision involves weighing competing priorities and understanding the inherent trade-offs. There's no one-size-fits-all solution; the "best" design depends entirely on your specific use cases, non-functional requirements (NFRs), and business goals.
+
+Here are some of the most common and critical trade-offs encountered in system design
+
+## 🆚 Availability vs. Consistency (CAP Theorem) 
+
+As we've extensively discussed, in a distributed system experiencing a network partition (an inevitable reality), you must choose between always being responsive (**Availability**) or always returning the most up-to-date, synchronized data (**Consistency**).
+
+Prioritizing **Consistency** (CP systems) means you might experience temporary service unavailability or blocking to prevent data inconsistencies. 
+
+Prioritizing **Availability** (AP systems) means your system will always respond, but might serve slightly stale data during a partition.
+
+🤔 What's more critical for your application? Financial transactions demand C. Social media feeds tolerate A.
+
+## 🚀 Latency vs. Throughput
+
+Optimizing for one can sometimes come at the expense of the other.
+
+- **Low Latency** - Focus on minimizing the time for a single request to complete (e.g., instant search results). Often involves fewer steps, direct paths.
+- **High Throughput** - Focus on maximizing the number of requests processed per unit of time (e.g., processing millions of sensor readings per second). Might involve batching, queues, or other techniques that add individual request latency.
+
+🤔 Is your primary goal a snappy user experience for individual actions, or processing a massive volume of work efficiently?
+
+## 🎯 Latency vs. Accuracy
+
+ Providing a very fast, approximate answer versus a slow, perfectly precise one.
+
+- **Low Latency (Sacrifice Accuracy)** - Returning results quickly from caches, eventual consistency models, or approximate algorithms. The answer might be slightly outdated or statistically derived.
+- **High Accuracy (Sacrifice Latency)** - Querying the authoritative source, performing complex computations, ensuring strong consistency. This takes more time.
+
+🤔 For user search suggestions or trending topics, speed beats perfect accuracy. For financial reports or crucial data analytics, accuracy is paramount.
+
+### 💰 Cost vs. Performance/Scalability 
+
+Investing more money into hardware, infrastructure, and specialized services can significantly improve performance and scalability, but budget is always a constraint.
+
+Running more servers, using premium cloud services, or having highly optimized (and expensive) database solutions all add to operational costs. Conversely, trying to be too frugal can lead to performance bottlenecks and scaling limitations.
+
+🤔 What's the acceptable balance between operational expenditure (OpEx) and the desired level of service and future growth capacity?
 
 ---
 
