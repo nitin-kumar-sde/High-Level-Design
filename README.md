@@ -599,15 +599,54 @@ Effective system design considers both scalability to manage growth and performa
   
 ---
 
-## ⛓️ Consistency, Availability, Partitioning (CAP)
+# 🛶 Consistency, Availability, Partitioning (CAP)
 
-- CAP Theorem
-- Eventual vs Strong Consistency
-- Leader-Follower Replication
-- Quorum-based systems
+## 🚂 Consistency (C)
 
-📘 Resources:
-- [CAP Theorem Explanation](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+Consistency in a distributed system means that every client always reads the most recent, successfully written data. After a successful write operation, any subsequent read operation, regardless of which node it hits, will return that latest, updated value. All replicas of the data across different nodes are synchronized.
+
+### ✈️ Types of Consistency
+
+**Strong Consistency** - The strictest form. A write operation is not considered complete until all (or a quorum of) replicas confirm they have the updated data. Reads are guaranteed to return the latest data.
+
+**Eventual Consistency** - A weaker form. After a write, reads might temporarily return stale data from other replicas. However, given enough time (and no new writes to the same data item), all replicas will eventually converge to the same value.
+
+
+## 🏖️ Availability (A)
+
+Availability means that the system is always operational and responsive to client requests, returning a non-error response for every query. This implies that the system can still function and serve requests even if some individual nodes within the distributed system fail.
+
+
+## 🌐 Partition Tolerance (P) 
+
+Partition Tolerance means that the system continues to operate effectively and correctly despite network partitions. A network partition occurs when a communication breakdown (e.g., network outage, router failure, cable cut) isolates parts of the distributed system from each other. Nodes in one isolated sub-system cannot communicate with nodes in another.
+
+## ⚖️ CAP Theorem - The Inevitable Trade-Off 
+
+The CAP Theorem (Consistency, Availability, Partition Tolerance) states that it's impossible for a distributed data store to simultaneously provide more than two out of the three guarantees when a network partition occurs.
+
+Since Partition Tolerance (P) is almost always a mandatory requirement for any true distributed system (because networks will fail), in practice, the CAP theorem often boils down to a fundamental choice between Consistency (C) and Availability (A) during a network partition.
+
+### ✅🌐 CP System - Consistency + Partition Tolerance 
+Prioritizes **Consistency** over Availability during a network partition.
+
+If a partition occurs, the system will block writes to the affected part of the system or return an error for reads/writes to ensure that data remains consistent. Some nodes might become temporarily unavailable.
+
+
+### 🟢🌐 AP System - Availability + Partition Tolerance 
+Prioritizes **Availability** over Consistency during a network partition.
+
+The system will continue to process requests and remain fully available to all clients, even if it means different nodes might temporarily have divergent (inconsistent) data. Reads might return stale data until the partition is resolved.
+
+
+### ✅🟢CA System - Consistency + Availability (Less Realistic in Practice)
+This configuration implies a system that cannot tolerate network partitions.
+
+Behavior: It can provide both strong Consistency and high Availability only if the network never experiences a partition. If a partition does occur, such a system would become unavailable or inconsistent.
+
+In any truly distributed system spread across networks, the assumption of "no partitions" is unrealistic. Therefore, CA systems are typically found in highly localized, non-distributed, or single-node database environments.
+
+[Read More →](https://www.geeksforgeeks.org/system-design/cap-theorem-in-system-design/)
 
 ---
 
