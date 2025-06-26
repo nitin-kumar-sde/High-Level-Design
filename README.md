@@ -165,6 +165,22 @@ An **API Gateway** acts as the **single entry point** for all external clients t
 
 [Learn More →](https://www.geeksforgeeks.org/system-design/what-is-api-gateway-system-design/)
 
+## 🌎 How internet works
+
+These three pillars work in concert to deliver web content to you efficiently
+
+* **📞 DNS (Domain Name System)**  - The internet's "phonebook." It translates human-readable domain names (like `example.com`) into numerical IP addresses (like `192.0.2.1`) that computers understand, enabling your browser to find servers.
+* **🌐 ISPs (Internet Service Providers)** - Your "on-ramp" to the internet. These companies provide the physical network infrastructure and connectivity that links your device to the global web, managing the flow of data packets.
+* **🚀 CDNs (Content Delivery Networks)** - Networks of geographically distributed servers that **cache and deliver content** (images, videos, static files) from a location **closest to the user**. They drastically reduce latency and improve website performance by serving content from "edge" locations, offloading traffic from origin servers.
+
+**⛲ All in One:** - DNS directs requests, ISPs provide the connectivity, and CDNs ensure fast, reliable content delivery by bringing data closer to you, forming the fundamental backbone of the internet experience.
+
+### 📘 Learn More
+
+- [📞DNS](https://www.geeksforgeeks.org/computer-networks/domain-name-system-dns-in-application-layer/)
+- [🌐 ISP](https://www.geeksforgeeks.org/isp-full-form/)
+- [🚀 CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+
 ---
 
 # 🛠 Asynchronous Processing 
