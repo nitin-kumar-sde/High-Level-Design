@@ -23,7 +23,7 @@ Whether you're preparing for **system design interviews**, building your next **
 12. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 13. [👁️ Observability & Monitoring](#-observability--monitoring)
 14. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-15. [📚 Recommended Books](#-recommended-books--courses)
+15. 15. [📚 Recommended Books](#-recommended-books--courses)
 
 ---
 
@@ -809,7 +809,7 @@ It is crucial for understanding latency bottlenecks, identifying which service i
 
 ---
 
-# ⚖️ Trade Offs & Design Decisions
+# 🆚 Trade Offs & Design Decisions
 
 Building any system, especially a distributed one, is fundamentally about making choices. Every architectural decision involves weighing competing priorities and understanding the inherent trade-offs. There's no one-size-fits-all solution; the "best" design depends entirely on your specific use cases, non-functional requirements (NFRs), and business goals.
 
@@ -850,6 +850,8 @@ Investing more money into hardware, infrastructure, and specialized services can
 Running more servers, using premium cloud services, or having highly optimized (and expensive) database solutions all add to operational costs. Conversely, trying to be too frugal can lead to performance bottlenecks and scaling limitations.
 
 🤔 What's the acceptable balance between operational expenditure (OpEx) and the desired level of service and future growth capacity?
+
+[Read More →](https://sumitnarangin.medium.com/tradeoffs-in-design-fb11b999753c)
 
 ---
 
