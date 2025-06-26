@@ -60,7 +60,37 @@ It primarily focuses on the following key areas
 
 # 📡 Networking & Communication
 
-> TBD
+## 🌐 Network Protocols
+
+Protocols are the essential rules governing how computers communicate and exchange data.
+
+**HTTP (Hypertext Transfer Protocol)** is the primary web protocol. It uses a client-server request-response model to exchange web content. It's fundamentally stateless, treating each interaction independently
+
+### Example
+
+HTTP Request (Client asks)
+
+```
+GET /homepage.html HTTP/1.1
+Host: www.example.com
+
+```
+
+HTTP Response (Server answers)
+```
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html><body>Hello!</body></html>
+(Server says "OK," sends back HTML content)
+```
+
+
+
+
+
+
 
 ---
 
