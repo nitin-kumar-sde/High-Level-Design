@@ -17,9 +17,9 @@ Whether you're preparing for **system design interviews**, building your next **
 6. [💰 Caching Techniques](#-caching-techniques)
 7. [👒 Databases](#-databases)
 8. [🧮 Consistent Hashing](#-consistent-hashing)
-9. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
-10. [🔐 Security & Authentication](#-security--authentication)
-11. [📈 Scalability & Performance](#-scalability--performance)
+9 . [📈 Scalability & Performance](#-scalability--performance)
+10. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
+11. [🔐 Security & Authentication](#-security--authentication)
 12. [🔁 Fault Tolerance & Redundancy](#-fault-tolerance--redundancy)
 13. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
 14. [📚 Recommended Books](#-recommended-books--courses)
@@ -564,16 +564,39 @@ For more details of Design Schema design and other best practices, Please check 
 
 ---
 
-## 📈 Scalability & Performance
+# 📈 Scalability & Performance
 
-- Vertical vs Horizontal Scaling
-- Auto-scaling groups
-- CDN, DB Replication
-- Performance testing: LoadRunner, JMeter
+**Scalability** is your system's ability to handle **increased load** by adding resources, maintaining performance.
+ 
+It is measured by **throughput** - The **volume of requests** your system can handle over time. 
 
-📘 Resources:
-- [Scalability Patterns](https://github.com/donnemartin/system-design-primer#scalability)
 
+**Performance** is how **fast and efficiently** your system operates, measured by:
+
+It is measured by **Latency**  - **time taken** in processing a request. Aim for low latency for good user experience.
+
+## 💡 Key Scaling Approaches
+
+- **⬆️ Vertical Scaling (Scale Up)** - Adding more power (CPU, RAM) to a **single server**. Simpler initially but has limits.
+- **➡️➡️ Horizontal Scaling (Scale Out)** - Adding more **servers** to distribute load. More complex but offers greater potential.
+
+Effective system design considers both scalability to manage growth and performance (low latency, high throughput) to ensure a responsive and efficient user experience.
+
+
+## 📊 Comparison Vertical vs. Horizontal Scaling
+
+| Feature         | ⬆️ Vertical Scaling (Scale Up)                | ➡️➡️ Horizontal Scaling (Scale Out)              |
+| :-------------- | :--------------------------------------------- | :--------------------------------------------- |
+| **Concept** | Adds more resources to a **single server**.    | Adds **more servers/instances**.               |
+| **Method** | Upgrade CPU, RAM, Disk of existing machine.    | Add new machines; often needs a Load Balancer. |
+| **Limits** | **Finite** hardware limits.                    | **Virtually limitless** (add more machines).   |
+| **Cost** | Higher cost per unit of power; expensive high-end machines. | Often more cost-effective (commodity hardware). |
+| **Complexity** | **Simpler** to manage initially.               | **Higher operational complexity** (distributed system challenges). |
+| **Resilience** | **Single Point of Failure** (SPOF).            | **Higher availability** (distributes risk).    |
+| **Best For** | Small-to-medium scale apps; non-distributed needs. | Large-scale, distributed, high-traffic systems. |
+
+[Read More →](https://www.geeksforgeeks.org/system-design/system-design-horizontal-and-vertical-scaling/)
+  
 ---
 
 ## ⛓️ Consistency, Availability, Partitioning (CAP)
