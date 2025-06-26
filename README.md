@@ -726,21 +726,26 @@ In any complex system, failures are not a matter of "if," but "when."
 
 ### 👯 Redundancy
 
-Having duplicate components (servers, databases, network paths) ready to take over if a primary one fails.
+Having duplicate components (servers, databases, network paths) ready to take over if a primary one fails (especially Database replicas)
+
 
 ### 🩺 Health Checks & Monitoring
 
-- Regularly checking the status of services and infrastructure components to detect failures or degraded performance quickly.
+Regularly checking the status of services and infrastructure components to detect failures or degraded performance quickly.
 
-### 🔄 Failover & Failback
+Setup alarms and metrics for detecting failures early.
 
-- **🎨 Failover** - The automatic process of switching from a primary, failed component to a secondary, healthy redundant component.
-- **🧩 Failback** - The process of switching operations back to the original primary component after it has been repaired or recovered.
+### 🔄 Automatic Recovery - Failover & Failback
+
+**🎨 Failover** - The automatic process of switching from a primary, failed component to a secondary, healthy redundant component.
+
+**🧩 Failback** - The process of switching operations back to the original primary component after it has been repaired or recovered.
 
 ### ⏳🔄 Timeouts & Retries
 
-- **Timeouts** - Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
-- **Retries** - Attempting a failed operation again.
+**Timeouts** - Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
+
+**Retries** - Attempting a failed operation again.
     - **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
     - **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
 
