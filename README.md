@@ -60,6 +60,25 @@ It primarily focuses on the following key areas
 
 # 📡 Networking & Communication
 
+## 🤝 Network Communication Models
+
+There are primarily two fundamental types of communication models in networked systems -  Client-Server and Peer-to-Peer (P2P).
+
+### 📦 Client-Server Communication
+
+A client requests a service, and a server provides it.
+
+Example: Your web browser (client) loading a website (server).
+
+Peer-to-Peer (P2P) Communication
+
+Each participant (peer) acts as both a client and a server.
+
+Example: File sharing (BitTorrent), blockchain networks.
+
+[Learn More →](https://www.geeksforgeeks.org/computer-networks/difference-between-client-server-and-peer-to-peer-network/)
+
+
 ## 🌐 Network Protocols
 
 Protocols are the essential rules governing how computers communicate and exchange data.
