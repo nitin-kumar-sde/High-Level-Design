@@ -719,7 +719,7 @@ In any complex system, failures are not a matter of "if," but "when."
 
 - **🕹️ Fault Tolerance** - The ability of a system to **continue operating without interruption** when one or more of its components fail. It's about designing redundancy and mechanisms to mask failures.
 
-- **✨ Resiliency** The ability of a system to **recover gracefully from failures** and maintain an acceptable level of service. It's a broader concept that includes fault tolerance, but also emphasizes recovery, adaptability, and degradation.
+- **✨ Resiliency** - The ability of a system to **recover gracefully from failures** and maintain an acceptable level of service. It's a broader concept that includes fault tolerance, but also emphasizes recovery, adaptability, and degradation.
 
 
 ## ♟️ Common Strategies
