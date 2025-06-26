@@ -746,8 +746,8 @@ Setup alarms and metrics for detecting failures early.
 **Timeouts** - Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
 
 **Retries** - Attempting a failed operation again.
-    - **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
-    - **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
+- **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
+- **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
 
 ### ⚡️ Circuit Breaker Pattern
 
