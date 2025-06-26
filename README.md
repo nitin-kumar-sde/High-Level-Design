@@ -21,8 +21,9 @@ Whether you're preparing for **system design interviews**, building your next **
 10. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
 11. [🔐 Security & Authentication](#-security--authentication)
 12. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
-13. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-14. [📚 Recommended Books](#-recommended-books--courses)
+13. [👁️ Observability & Monitoring](#-observability--monitoring)
+14. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
+15. [📚 Recommended Books](#-recommended-books--courses)
 
 ---
 
@@ -765,12 +766,46 @@ Multi-region deployments, regular backups, data replication to remote locations.
 
 ---
 
-## 10. 📊 Monitoring and Observability 
-- Metrics (latency, throughput, error rate)
-- Logs vs traces vs metrics
-- Tools: Prometheus, Grafana, ELK, Datadog
-- Health checks and alerting
-- SLOs, SLAs, SLIs
+# 👁️ Observability & Monitoring
+
+In complex distributed systems, it's not enough to just build robust services; you need to understand their internal state, performance, and health at all times. This is the domain of Observability and Monitoring. While often used interchangeably, they have distinct roles:
+
+**🔬 Observability** - The act of **collecting and analyzing predefined metrics and logs** to understand the health and performance of your system.
+
+
+## 🎡 The Three Pillars of Observability
+
+### 📈 Metrics
+
+Aggregated, numeric data points measured over time. They quantify behavior and resource utilization.
+
+Most commonly used metrics - CPU usage, memory consumption, network I/O, requests per second (RPS), error rates, database query latency.
+
+### Logs
+
+Discrete, timestamped records of events that occur within an application or system. They provide granular detail about what happened and when.
+
+Most commonly used logs - Application Logs, Request Logs
+
+### 🗺️ Traces
+
+A representation of the end-to-end flow of a single request or transaction as it propagates through multiple services in a distributed system. A trace links together operations (spans) from different services.
+It is crucial for understanding latency bottlenecks, identifying which service in a complex microservices architecture is causing a slowdown, and debugging distributed issues.
+
+**Key Concepts:**
+- **Span** - A single operation within a trace (e.g., an RPC call, a database query). Each span has a start/end time.
+- **Trace ID** - A unique identifier linking all spans belonging to the same request.
+- **Context Propagation** - Passing trace IDs and other context across service boundaries (e.g., via HTTP headers).
+
+
+## 📟 Essential Practices for Observability
+
+- **🚨 Alerting** - Proactive notifications (email, SMS, PagerDuty, tickets) when predefined thresholds are breached or anomalies are detected in metrics or logs.
+- **📈 Dashboards** - Visual representations of metrics and logs, providing real-time insights into system health, performance trends, and business KPIs.
+- **📖 Runbooks/SOPs** - Documented procedures for responding to specific alerts or common operational issues, enabling faster incident resolution.
+
+[Read More →](https://www.geeksforgeeks.org/what-is-observability)
+
 
 ---
 
