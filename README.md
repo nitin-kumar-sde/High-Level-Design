@@ -650,15 +650,63 @@ In any truly distributed system spread across networks, the assumption of "no pa
 
 ---
 
-## 🔐 Security & Authentication
+# 🔐 Security & Authentication
 
-- OAuth 2.0, JWT, SAML
-- TLS/SSL
-- API key vs OAuth
-- Rate limiting & Abuse Protection
 
-📘 Resources:
-- [JWT Guide](https://jwt.io/introduction)
+Security is a paramount concern in any system design, ensuring data integrity, confidentiality, and availability. 
+
+It involves several distinct, yet interconnected, mechanisms to control access and manage behavior.
+
+## 🆔 Authentication (AuthN)
+
+**Authentication** is the process of **verifying the identity of a user, service, or application**. It answers the question "Who are you?"
+
+### 🧸 Common Mechanisms
+
+- **Passwords & Hashing** - Users provide credentials, which are compared against stored (hashed and salted) versions.
+- **Multi-Factor Authentication (MFA)** - Requires two or more verification methods (e.g., password + OTP from app, fingerprint). Greatly enhances security.
+    - **🔑 OAuth 2.0 / OpenID Connect (OIDC)**
+        -  **OAuth:** A delegated authorization framework, allowing a user to grant a third-party application limited access to their resources on another service without sharing credentials.
+        - **OIDC:** An identity layer built on top of OAuth 2.0, specifically for authentication, providing user identity claims (used for Single Sign-On - SSO).
+    * **🎫 JSON Web Tokens (JWT)** Compact, URL-safe means of representing claims (e.g., user identity, permissions) between two parties. Often used for stateless authentication and authorization after initial login. The server issues a token, and subsequent requests include this token for verification without repeated database lookups.
+
+
+## 🔒 Authorization (AuthZ)
+
+**Authorization** is the process of **determining what an authenticated entity is permitted to do** within the system. It answers the question: "What are you allowed to do?"
+
+To enforce access control policies, ensuring users can only perform actions and access resources they have been granted permission for. It always follows successful authentication.
+
+### 🧸 Common Mechanisms
+    
+-  **🎭 Role-Based Access Control (RBAC)** - Permissions are assigned to roles (e.g., 'Admin', 'Editor', 'Viewer'), and users are assigned to roles. Simplifies management for large user bases.
+- **✨ Attribute-Based Access Control (ABAC)** - Access decisions are based on attributes (characteristics) of the user, resource, action, and environment (e.g., "User `X` can edit `Document Y` if `X` is in department `Z` and `Y` is a draft"). More fine-grained and flexible than RBAC.
+- **📝 Access Control Lists (ACLs)** - Directly maps permissions to individual users or groups for specific resources (e.g., "User Alice has read access to File A"). Can become cumbersome for many users/resources.
+
+## ⏳ Rate Limiting / Throttling
+
+**Rate Limiting** is a strategy for **controlling the rate at which an API or service accepts requests** from a user, IP address, or application over a defined time window.
+
+### 🫧 Key Benifits
+- **Prevent Abuse:** - Mitigate brute-force attacks, DoS/DDoS attacks by malicious clients.
+- **Ensure Fair Usage:** - Prevent a single user or client from monopolizing system resources.
+- **Protect Downstream Services:** - Shield backend services from being overwhelmed.
+ 
+      
+### 🧳 Common Algorithms
+- **🪟 Fixed Window Counter** - Simple; counts requests in a fixed time window (e.g., 100 requests per minute). Prone to "bursty" traffic at window edges.
+- **🏠 Sliding Window Log** - Tracks timestamps of each request. Most accurate but resource-intensive.
+- **🏢 Sliding Window Counter** - Hybrid; combines fixed windows but uses previous window's rate to smooth out bursts.
+- **🪙 Token Bucket ** - A "bucket" of tokens is refilled at a fixed rate. Each request consumes a token. Allows for bursts up to bucket capacity.
+- **💧 Leaky Bucket ** - Requests enter a queue (the "bucket") and are processed at a constant rate. Excess requests overflow/are dropped. Smooths out bursts.
+
+> 🧠 Note - Typically implemented at the API Gateway, Load Balancer, or specific service level.
+
+
+[Read More on Security →](https://www.geeksforgeeks.org/system-design/essential-security-measures-in-system-design/)
+
+[Read More on Rate Limiting →](https://www.geeksforgeeks.org/system-design/rate-limiting-in-system-design/)
+
 
 ---
 
