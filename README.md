@@ -860,7 +860,6 @@ Running more servers, using premium cloud services, or having highly optimized (
 - **Designing Data-Intensive Applications** by Martin Kleppmann
 - **System Design Interview** – Alex Xu (Vol 1 & 2)
 - **Building Microservices** – Sam Newman
-- [Grokking System Design Interview – Educative](https://www.educative.io/courses/grokking-the-system-design-interview)
-- [High Scalability Blog](http://highscalability.com/)
+
 
 ---
