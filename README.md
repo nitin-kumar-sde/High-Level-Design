@@ -766,9 +766,9 @@ Multi-region deployments, regular backups, data replication to remote locations.
 
 ---
 
-# 📈 Observability & Monitoring
+# 🔬 Observability & Monitoring
 
-In complex distributed systems, it's not enough to just build robust services; you need to understand their internal state, performance, and health at all times. This is the domain of Observability and Monitoring. While often used interchangeably, they have distinct roles:
+In complex distributed systems, it's not enough to just build robust services; you need to understand their internal state, performance, and health at all times. This is the domain of Observability and Monitoring.
 
 **🔬 Observability** - The act of **collecting and analyzing predefined metrics and logs** to understand the health and performance of your system.
 
