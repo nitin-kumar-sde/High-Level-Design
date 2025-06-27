@@ -748,7 +748,7 @@ In any complex system, failures are not a matter of "if," but "when."
 - **✨ Resiliency** - The ability of a system to **recover gracefully from failures** and maintain an acceptable level of service. It's a broader concept that includes fault tolerance, but also emphasizes recovery, adaptability, and degradation.
 
 
-## ♟️ Common Strategies
+## ♟️ Most Common Strategies
 
 ## 🧬 Data Redundancy
 
@@ -797,14 +797,7 @@ Multi-region deployments, regular backups, data replication to remote locations.
 > ⚠️ **Trade-off**: Redundancy increases storage cost and requires careful consistency management.
 
 
-
-### 🔄 Automatic Recovery - Failover & Failback
-
-**🎨 Failover** - The automatic process of switching from a primary, failed component to a secondary, healthy redundant component.
-
-**🧩 Failback** - The process of switching operations back to the original primary component after it has been repaired or recovered.
-
-### ⏳🔄 Timeouts & Retries
+## ⏳🔄 Timeouts & Retries
 
 **Timeouts** - Limiting the amount of time a service will wait for a response from another service. Prevents indefinite waits and resource exhaustion.
 
@@ -842,11 +835,43 @@ A **Circuit Breaker** is a resilience pattern used to prevent **cascading failur
 - 🚀 **Improves system stability and fault tolerance**
 - 📉 **Reduces unnecessary load on degraded services**
 
-[Read More on Circuit Breaker→](https://www.geeksforgeeks.org/system-design/what-is-circuit-breaker-pattern-in-microservices/)
+[Read More →](https://www.geeksforgeeks.org/system-design/what-is-circuit-breaker-pattern-in-microservices/)
+
+## 🧭  Auto-Recovery from failures - Leader Election 
+
+**Leader Election** is a coordination strategy where a single node is chosen as the **primary coordinator** among a group of distributed nodes. It's critical for **auto-recovery**, **failover**, and high **system availabilty**.
 
 
 
-[Read More on Fault Tolerance→](https://medium.com/@rohanraman6/resilience-and-fault-tolerance-in-modern-applications-a-practical-implementation-43aa7d635bbb)
+### 👑 What is Leader Election?
+A **leader node** handles critical tasks like
+- Health check Worker Nodes
+- Spinning new Worker Nodes and terminating Unhealthy Nodes
+  
+If the leader fails, a new one is **automatically elected** using Leader Election Algorithm.
+
+### 🔄 Auto-Recovery Flow
+- 🛑 **Leader fails** 
+- 🔍 **Election triggered** among worker/follower nodes
+- 👑 **New leader elected and Promoted as Leader**
+- ✅ **System resumes operations** smoothly
+
+
+### ⚙️ Common Algorithms
+- **📶Bully Algorithm**
+  - Highest-ID node becomes leader  
+  - Simple, but slower in large clusters
+- **🚤 Raft Consensus** 
+  - Robust leader election with log replication  
+  - Used in systems like etcd, Consul
+
+### 🌟 Key Advantages of Leader Election 
+- 🚫 No single point of failure
+- 🔄 Seamless auto-failover
+- 📶 High system availability
+
+
+[Read More →](https://www.geeksforgeeks.org/system-design/leader-election-in-system-design/)
 
 ---
 
