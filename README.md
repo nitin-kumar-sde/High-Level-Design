@@ -597,7 +597,32 @@ Effective system design considers both scalability to manage growth and performa
 | **Best For** | Small-to-medium scale apps; non-distributed needs. | Large-scale, distributed, high-traffic systems. |
 
 [Read More →](https://www.geeksforgeeks.org/system-design/system-design-horizontal-and-vertical-scaling/)
-  
+
+## ⚖️ Load Balancers
+
+**Load Balancers** are essential components in distributed systems that help distribute incoming traffic across multiple servers to ensure **scalability**, **reliability**, and **high availability**.
+
+### 🧬 Key Characteristics
+
+- 🧱 **Scalability** – enables horizontal scaling and acts as single point of contact with client.  
+- ⚖️ **Load Distribution** – distributes load among servers based on configured algorithm.
+- 💥 **Fault Tolerance** – routes traffic away from unhealthy nodes  
+- 🔐 **Security** – can help obscure internal infrastructure and manage TLS  
+- 🚀 **Performance** – reduces latency by using geographically closer nodes (in global load balancing)
+
+
+### 🧠 Key Algorithms
+
+| Algorithm              | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **Round Robin**        | Cycles through servers in order – simple and stateless                      |
+| **Least Connections**  | Chooses the server with the fewest active connections                       |
+| **IP Hash**            | Maps clients to servers using a hash of the client IP – ensures stickiness  |
+| **Weighted Round Robin** | Like Round Robin, but gives preference to more powerful servers            |
+
+
+[Read More →](https://www.geeksforgeeks.org/system-design/what-is-load-balancer-system-design/)
+
 ---
 
 # 🛶 Consistency, Availability, Partitioning (CAP)
