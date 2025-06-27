@@ -24,7 +24,8 @@ Whether you're preparing for **system design interviews**, building your next **
 13. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 14. [👁️ Observability & Monitoring](#-observability--monitoring)
 15. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-16. [📚 Recommended Books](#-recommended-books)
+16. [🛠 Practice Standard Interview Problems](#-practice-standard-interview-problems)
+17. [📚 Recommended Books](#-recommended-books)
 
 ---
 
@@ -1035,7 +1036,13 @@ Running more servers, using premium cloud services, or having highly optimized (
 
 ---
 
-## 📚 Recommended Books
+# 🛠 Practice Standard Interview Problems
+
+> TBD
+
+---
+
+# 📚 Recommended Books
 
 - **[Understanding Distributed Systems](./Books/Understanding_Distributed_System.pdf)** — *Roberto Vitillo*  
 - **[Designing Data-Intensive Applications](.Books/Designing_Data_Intensive_Applications.pdf)** — *Martin Kleppmann*  
