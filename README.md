@@ -750,16 +750,53 @@ In any complex system, failures are not a matter of "if," but "when."
 
 ## ♟️ Common Strategies
 
-### 👯 Redundancy
+## 🧬 Data Redundancy
 
-Having duplicate components (servers, databases, network paths) ready to take over if a primary one fails (especially Database replicas)
+Data Redundancy is the intentional duplication of data to improve **reliability**, **availability**, and **disaster resilience** in distributed systems.
+
+### 🔁 Replication
+
+Storing the same data across multiple nodes or regions.
+
+**Types of Replication** 
+
+**🟢 Synchronous Replication** 
+- Strongly Consistent  
+- Higher latency due to coordination
+  
+**⚡ Asynchronous Replication**   
+- Eventual Consistent
+- Faster writes  
 
 
-### 🩺 Health Checks & Monitoring
+### 🗃️ Backups
+Periodic copies of entire datasets stored separately.
 
-Regularly checking the status of services and infrastructure components to detect failures or degraded performance quickly.
+**Characteristics**
+Usually offline or cold storage
 
-Setup alarms and metrics for detecting failures early.
+Useful for long-term recovery
+
+**Best Practices**
+- Automate regular snapshots
+- Use incremental backups to save space
+- Store offsite or on cloud
+
+
+### 🌪️ Disaster Recovery 
+A plan for recovering system functionality and data in the event of a major catastrophic failure (e.g., entire data center outage, natural disaster).
+
+Multi-region deployments, regular backups, data replication to remote locations.
+
+
+## 🌍 Advantages of Data Redundancy
+- High availability & fault tolerance
+- Faster recovery from failures
+- Protection against accidental data loss or corruption
+
+> ⚠️ **Trade-off**: Redundancy increases storage cost and requires careful consistency management.
+
+
 
 ### 🔄 Automatic Recovery - Failover & Failback
 
@@ -805,15 +842,11 @@ A **Circuit Breaker** is a resilience pattern used to prevent **cascading failur
 - 🚀 **Improves system stability and fault tolerance**
 - 📉 **Reduces unnecessary load on degraded services**
 
-[Read More →](https://www.geeksforgeeks.org/system-design/what-is-circuit-breaker-pattern-in-microservices/)
+[Read More on Circuit Breaker→](https://www.geeksforgeeks.org/system-design/what-is-circuit-breaker-pattern-in-microservices/)
 
-## 🌍 Disaster Recovery
 
-A plan for recovering system functionality and data in the event of a major catastrophic failure (e.g., entire data center outage, natural disaster).
 
-Multi-region deployments, regular backups, data replication to remote locations.
-
-[Read More →](https://medium.com/@rohanraman6/resilience-and-fault-tolerance-in-modern-applications-a-practical-implementation-43aa7d635bbb)
+[Read More on Fault Tolerance→](https://medium.com/@rohanraman6/resilience-and-fault-tolerance-in-modern-applications-a-practical-implementation-43aa7d635bbb)
 
 ---
 
