@@ -24,7 +24,7 @@ Whether you're preparing for **system design interviews**, building your next **
 13. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 14. [👁️ Observability & Monitoring](#-observability--monitoring)
 15. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-16. [📚 Recommended Books](#-recommended-books--courses)
+16. [📚 Recommended Books](#-recommended-books)
 
 ---
 
@@ -1035,11 +1035,12 @@ Running more servers, using premium cloud services, or having highly optimized (
 
 ---
 
-## 📚 Recommended Books & Courses
+## 📚 Recommended Books
 
-- **Designing Data-Intensive Applications** by Martin Kleppmann
-- **System Design Interview** – Alex Xu (Vol 1 & 2)
-- **Building Microservices** – Sam Newman
+- **[Understanding Distributed Systems](./Understanding_Distributed_System.pdf)** — *Roberto Vitillo*  
+- **[Designing Data-Intensive Applications](./Designing_Data_Intensive_Applications.pdf)** — *Martin Kleppmann*  
+- **[Monolith to Microservices](./Monolith_To_Microservices.pdf)** — *Sam Newman*  
+- **[Clean Architecture](./Clean_Architecture.pdf)** — *Robert C. Martin (Uncle Bob)*  
 
 
 ---
