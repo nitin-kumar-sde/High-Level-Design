@@ -603,7 +603,36 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 
 # 🧮 Consistent Hashing
 
-> TBD
+**Consistent Hashing** is a key technique used in distributed systems to distribute data across nodes **efficiently** and **dynamically** — especially when nodes are added or removed. Unlike traditional hashing, it minimizes **re-distribution of keys**, making it ideal for **scalable and fault-tolerant architectures**.
+
+## 🌀 Challenges with Traditional Hashing
+
+In simple modulo-based hashing
+
+- Adding/removing a node causes **most keys to remap**
+- This leads to **data shuffling**, and **performance drops**
+
+## 🧭 How Consistent Hashing Works
+- **Hash space** is treated as a **circular ring (0 to 2³² - 1)** - (configurable)
+- Each node and key is hashed onto this ring
+- A key is stored in the **first node found in the clockwise direction**
+
+## 📌 When nodes join/leave
+- Only a **small subset of keys** are remapped
+- Ensures minimal disruption and better **load balancing**
+
+## ⚖️ Trade-offs
+
+| Feature                | Pros ✅                                      | Cons ❌                                     |
+|------------------------|----------------------------------------------|---------------------------------------------|
+| 🔄 Node scalability     | Easily add/remove nodes                      | Requires coordination among nodes           |
+| 🎯 Key remapping        | Minimal key movement                         | Slight complexity in implementation         |
+| ⚖️ Load balancing       | Improved with virtual nodes                  | Might need tuning of vNode count            |
+| 🛡️ Fault tolerance      | Supports replication easily                  | Requires failure detection mechanisms       |
+
+> 💡 **Pro Tip**: Always use virtual nodes in production systems to ensure fair distribution of load even when node capacity varies.
+
+[Read More →](https://www.geeksforgeeks.org/system-design/consistent-hashing/)
 
 ---
 
