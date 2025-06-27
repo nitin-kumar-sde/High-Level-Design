@@ -1043,3 +1043,9 @@ Running more servers, using premium cloud services, or having highly optimized (
 
 
 ---
+
+🧠 High-Level Design is about **clarity, scalability, and trade-offs** — not just boxes and arrows.
+
+👨‍💻 Keep building. Keep learning. Happy designing!
+
+
