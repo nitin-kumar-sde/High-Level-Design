@@ -16,14 +16,15 @@ Whether you're preparing for **system design interviews**, building your next **
 5. [🎪 Architectural Paradigms](#-architectural-paradigms)
 6. [💰 Caching Techniques](#-caching-techniques)
 7. [👒 Databases](#-databases)
-8. [🧮 Consistent Hashing](#-consistent-hashing)
-9. [📈 Scalability & Performance](#-scalability--performance)
-10. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
-11. [🔐 Security & Authentication](#-security--authentication)
-12. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
-13. [👁️ Observability & Monitoring](#-observability--monitoring)
-14. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-15. [📚 Recommended Books](#-recommended-books--courses)
+8. [🌸 Bloom Filters](#-bloom-filters)
+9. [🧮 Consistent Hashing](#-consistent-hashing)
+10. [📈 Scalability & Performance](#-scalability--performance)
+11. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
+12. [🔐 Security & Authentication](#-security--authentication)
+13. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
+14. [👁️ Observability & Monitoring](#-observability--monitoring)
+15. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
+16. [📚 Recommended Books](#-recommended-books--courses)
 
 ---
 
@@ -556,6 +557,47 @@ Selecting the right database depends on your **access patterns**, **consistency 
 🔑 **Tip**: Design for your **read/write ratio**, **consistency vs availability**, and **schema flexibility** needs.
 
 For more details of Design Schema design and other best practices, Please check - [LLD DB Schema Designing](https://github.com/nitin-kumar-sde/Low-Level-Design/blob/main/README.md#-db-schema-designing)
+
+---
+
+# 🌸 Bloom Filters
+
+A **Bloom Filter** is a **space-efficient probabilistic data structure** used to test whether an element is a member of a set. It can say:
+- ❌ *Definitely not in the set*
+- ✅ *Possibly in the set* (false positives possible)
+
+
+## 🧠 How It Works
+- Uses a **bit array** and **multiple hash functions**
+- When adding an element:
+  - Hash it with *k* hash functions
+  - Set the resulting *k* bits in the array to 1
+- To check membership
+  - Hash the element
+  - If all *k* bits are 1 → possibly in set  
+  - If any bit is 0 → definitely not in set
+
+
+## 📦 Use Cases
+- 🌐 Web cache checking (e.g. is this URL cached?)
+- 📚 Spell checkers (is this word valid?)
+- 🔍 Recommendation Systems (efficient filtering)
+- ֎ Populating feeds of Users
+
+
+## ⚖️ Trade-offs
+| Feature              | Behavior                          |
+|---------------------|-----------------------------------|
+| False Negatives     | ❌ Never                          |
+| False Positives     | ✅ Possible                       |
+| Memory Usage        | 🔽 Extremely low                  |
+| Speed               | ⚡ Very fast (constant time ops)  |
+
+
+
+> ⚠️ **Note** - Great for read-heavy systems, but not suitable when exact accuracy is required.
+
+[Read More →](https://www.geeksforgeeks.org/system-design/bloom-filters-in-system-design/)
 
 ---
 
