@@ -601,7 +601,7 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 
 ---
 
-[🧮 Consistent Hashing](#-consistent-hashing)
+# 🧮 Consistent Hashing
 
 > TBD
 
