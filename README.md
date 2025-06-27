@@ -775,13 +775,39 @@ Setup alarms and metrics for detecting failures early.
 - **With Exponential Backoff** - Waiting for progressively longer periods between retries to avoid overwhelming a struggling service.
 - **Idempotency (Crucial for Retries)** - Designing operations so that performing them multiple times has the same effect as performing them once. This makes retries safe.
 
-### ⚡️ Circuit Breaker Pattern
 
-Prevents a system from repeatedly trying to access a failing service, thus preventing cascading failures and giving the failing service time to recover.
+## ⚡️ Circuit Breaker
 
-Monitors calls to a service. If calls fail repeatedly, the circuit "trips," and subsequent calls are immediately rejected (or rerouted) without hitting the failing service. After a timeout, it allows a few test calls to see if the service has recovered.
 
-### 🌍 Disaster Recovery
+A **Circuit Breaker** is a resilience pattern used to prevent **cascading failures** in distributed systems by **detecting failure conditions** and **short-circuiting requests** before they cause wider system impact.
+
+### ⚙️ What It Does
+
+- 🚧 Monitors calls to remote services or components
+- 🛑 "Breaks the circuit" if failures cross a threshold (e.g., timeouts, errors)
+- 🔁 Automatically retries after a **cool-down period**
+- ✅ Allows systems to **fail fast** and **recover gracefully**
+- 🎸 Can skips calls to a components and go with some default behaviour (if use case allows)
+
+
+### 🔄 States of a Circuit Breaker
+
+| State        | Description                                                                  |
+|--------------|------------------------------------------------------------------------------|
+| **Closed**   | Normal operation – requests flow through and failures are monitored         |
+| **Open**     | Circuit is "tripped" – all requests are immediately failed/skipped          |
+| **Half-Open**| Limited requests are allowed to test if service has recovered               |
+
+
+### 🎸 Key Advantages
+
+- 🧯 **Prevents cascading failures**
+- 🚀 **Improves system stability and fault tolerance**
+- 📉 **Reduces unnecessary load on degraded services**
+
+[Read More →](https://www.geeksforgeeks.org/system-design/what-is-circuit-breaker-pattern-in-microservices/)
+
+## 🌍 Disaster Recovery
 
 A plan for recovering system functionality and data in the event of a major catastrophic failure (e.g., entire data center outage, natural disaster).
 
