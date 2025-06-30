@@ -1038,7 +1038,26 @@ Running more servers, using premium cloud services, or having highly optimized (
 
 # 🛠 Practice Standard Interview Problems
 
-> TBD
+- [Design E-Commerce Application](https://medium.com/@prasanta-paul/system-design-for-e-commerce-platform-3048047b5323)
+- [Design a Rate limiter](https://medium.com/geekculture/system-design-design-a-rate-limiter-81d200c9d392)
+- [Design a Notification Service](https://www.geeksforgeeks.org/system-design/design-notification-services-system-design/)
+- [Design Google Maps](https://medium.com/@jyoti1308/designing-google-maps-d9865c3506ba)
+- [Design a Chat Application](https://medium.com/@m.romaniiuk/system-design-chat-application-1d6fbf21b372)
+- [Design Twitter](https://medium.com/@karan99/system-design-twitter-793ab06c9355)
+- [Design Netflix](https://medium.com/@karan99/system-design-netflix-6962b4f6222)
+- [Design Tinder](https://kasunprageethdissanayake.medium.com/tinder-fully-explained-system-design-and-architecture-1225ecdfe64e)
+- [Design URL Shortner](https://medium.com/@sandeep4.verma/system-design-scalable-url-shortener-service-like-tinyurl-106f30f23a82)
+- [Design Paste Bin](http://medium.com/codex/designing-pastebin-77e6e86172eb)
+- [Design Fraud detection system](https://medium.com/@mayilb77/design-financial-fraud-detection-system-based-on-cdc-change-data-capture-technology-and-real-time-9f2c47d24054)
+- [Design a Web crawler](https://jc1175.medium.com/how-i-would-design-a-web-crawler-9013251fa9f3)
+- [Design Zoom / Skype](https://medium.com/@lazygeek78/system-design-of-zoom-9f0b945a5636)
+- [Design Facebook](https://medium.com/@bugfreeai/system-design-key-points-design-twitter-facebook-130804f9753b)
+- [Design Car booking system like Uber](https://medium.com/@karan99/system-design-uber-33593137a4fe)
+- [Design Food Delivery App like Zomato](https://medium.com/@prashant558908/design-of-a-food-ordering-system-like-zomato-swiggy-doordash-in-both-java-and-python-for-low-7d178a5f7b4c)
+- [Design Whatsapp](https://medium.com/@karan99/system-design-whatsapp-791c6c201161)
+- [Design Tiktok](https://medium.com/@lazygeek78/design-of-tiktok-e2da18e17f2b)
+- [Design Instagram](https://medium.com/@lazygeek78/system-design-series-cfa60db16c27)
+- [Design Snapchat](https://www.designgurus.io/course-play/grokking-database-fundamentals-for-tech-interviews/doc/snapchat-system-design-database-design)
 
 ---
 
