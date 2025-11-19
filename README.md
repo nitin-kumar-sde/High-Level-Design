@@ -30,7 +30,7 @@ Whether you're preparing for **system design interviews**, building your next **
 
 # 🔍 What is HLD?
 
-High-Level Design (HLD) defines the overall architecture and structure of the system — like viewing the system from 10,000 feet above. It focuses on how different subsystems and services interact to achieve business goals, without delving into class-level implementation.
+**High-Level Design (HLD)** defines the overall architecture and structure of the software system — like viewing the system from 10,000 feet above. It focuses on how different subsystems and services interact with each other to achieve business goals.
 
 A well-thought HLD ensures your system is scalable, resilient, maintainable, and easy to evolve.
 
