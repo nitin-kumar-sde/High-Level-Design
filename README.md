@@ -1,9 +1,8 @@
-# 🎡 High-Level Design (HLD) Complete Roadmap with Resources
+# 👑 High-Level Design (HLD) Complete Resources for mastering System Design 
 
-🚀🚀 Welcome to the all-in-one guide to master **High-Level Design (HLD)**.
+⌛ Welcome to the all-in-one repository to master **High-Level Design (HLD)**.
 
-
-Whether you're preparing for **system design interviews**, building your next **SaaS or distributed system**, or leading **architecture discussions**, this repo has you covered.
+Whether you're preparing for **system design interviews**, building your next **SaaS or distributed system**, or leading **architecture discussions**, this repository has you covered.
 
 ---
 
