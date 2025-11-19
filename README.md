@@ -45,17 +45,17 @@ High-Level Design (HLD) captures the macro architecture — how different compon
 
 It primarily focuses on the following key areas
 
-- 💼 Component Responsibilities
+- 💼 Identifying components of a System
 - 💬 Inter-Component Communication
 - 🏛️ Architecture Style
-- 🌍 Database & Storage Decisions
-- 📺 Caching Strategy
-- 🔐 Security Considerations
-- 💪 Fault Tolerance & Resilience
+- 🌍 Database & Storage
+- 📺 Caching
 - 📈 Scalability and Availabilty
+- 🔐 Security
+- 💪 Fault Tolerance & Resilience
+- 🧭 Deployment & Infrastructure
+- ⌛ System testing
 - 🤖 Monitoring & Observability
-- 🧭 Deployment & Infrastructure Overview
-- ⌛ Testing Strategy at the System Level
 
 
 ---
