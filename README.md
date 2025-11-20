@@ -19,7 +19,7 @@ Whether you're preparing for **system design interviews**, building your next **
 9. [📉 Big Data Processing](#-big-data-processing)
 10. [🧮 Distributed Systems](#-distributed-systems)
 11. [📈 Scalability & Performance](#-scalability--performance)
-12. [🔐 Security & Authentication](#-security--authentication)
+12. [🔐 Security](#-security)
 13. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
 14. [👁️ Observability & Monitoring](#-observability--monitoring)
 15. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
@@ -827,8 +827,7 @@ Effective system design considers both scalability to manage growth and performa
 
 ---
 
-# 🔐 Security & Authentication
-
+# 🔐 Security
 
 Security is a paramount concern in any system design, ensuring data integrity, confidentiality, and availability. 
 
