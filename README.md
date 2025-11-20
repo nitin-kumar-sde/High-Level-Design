@@ -1018,7 +1018,7 @@ If the leader fails, a new one is **automatically elected** using Leader Electio
 - 📶 High system availability
 
 
-[Read More →](https://www.geeksforgeeks.org/system-design/leader-election-in-system-design/)
+📈 Resiliency of a system is evaluated through systematic **chaos testing**, which measures how a system performs as components of system made to fail intentionally.
 
 ---
 
