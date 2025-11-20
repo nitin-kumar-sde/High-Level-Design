@@ -720,12 +720,12 @@ In simple modulo-based hashing
 
 **Scalability** is your system's ability to handle **increased load** by adding resources, maintaining performance.
  
-It is measured by **throughput** - The **volume of requests** your system can handle over time. 
+It is measured by **throughput** - The **volume of requests** your system can handle over time. [Transactions per Second(TPS).]
 
-
-**Performance** is how **fast and efficiently** your system operates, measured by:
+**Performance** is how **fast and efficiently** your system operates.
 
 It is measured by **Latency**  - **time taken** in processing a request. Aim for low latency for good user experience.
+
 
 ## 💡 Key Scaling Approaches
 
