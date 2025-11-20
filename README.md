@@ -648,9 +648,10 @@ Transaction is divided into 2 phases
 
 Transaction is divided into 3 phases - 
 
-- **Can-Commit**
-- **Pre-Commit**
-- **Commit**
+- **📝 Can-Commit**
+- **🟡 Pre-Commit**
+- **✅ Commit**
+
 
 #### ✅️ Pros
 
