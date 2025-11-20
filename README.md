@@ -423,59 +423,60 @@ ACID ensures the reliability and integrity of database transactions -
 | Serializable         | ✅ Yes               | ✅ Yes                         | ✅ Yes                   | Low                  | Highest correctness; acts like transactions are serial. |
 
 
-## 🚀 Database Scaling
+# 🚀 Database Scaling
 
 As data volume and query load grow, databases must **scale** to maintain performance. Vertical scaling (bigger machine) hits limits — so we adopt **horizontal scaling** via **partitioning** and **sharding**.
 
 
-### 🧩 Partitioning
+## 🧩 Partitioning
 
 **Partitioning** is the process of **splitting a large table into smaller pieces** (partitions) to improve query performance and manageability. It's often done within a **single database server**.
 
-#### 🚁 Types of Partitioning
+## 🚁 Types of Partitioning
 - **Horizontal Partitioning**: Rows are divided across partitions.
   - 👉 Example: Orders for 2023 vs 2024.
-- **Vertical Partitioning**: Tables are split across partitions.
-  - 👉 Example: Table 1 in partition 1, Table 2 in partition2.
+- **Vertical Partitioning**: Table columns are split across partitions.
+  - 👉 Example: Col1, Col2 in Table 1, Col1, Col3 in Table 2.
 
 
-### ✈️ Sharding
+## ✈️ Sharding
 
 **Sharding** is a form of horizontal partitioning where **data is split across multiple independent database servers** (shards). Each shard holds a subset of the data.
 
-#### ♟️ Key Concepts
+### ♟️ Key Concepts
 - **Shard Key**: The field used to determine which shard stores the data.
 - **Shard Router**: Routes queries to the correct shard.
 - **Rebalancing**: Moving data when shards become uneven.
 
-### 🎲 Types of Sharding
+## 🎲 Sharding Strategies
 - **Range-Based**: Based on value ranges (e.g., user_id 1–1000).
 - **Hash-Based**: Distributes data using a hash of the shard key.
 
 
-#### ✅ Benefits:
-- Enables horizontal scaling.
+### ✅ Advantages
+- Enables horizontal scaling(scaling out).
 - Isolates data — increases fault tolerance.
 - Reduces latency when sharded close to the user.
 
-#### ⚠️ Challenges:
+### ⚠️ Challenges
 - Cross-shard queries are complex.
 - Rebalancing shards can be tricky.
 - Harder to maintain **strong consistency**.
 
-### 🧬 Read & Write Replicas
+
+## 🧬 Replication
 
 To scale database **reads and writes independently**, many systems adopt a **replication strategy** — where data from a primary (write) database is copied to one or more replicas.
 
 
-##### ✍️ Write Replica (Primary / Leader)
+### ✍️ Write Replica (Primary / Leader)
 - **Handles all writes** and **critical read operations**.
 - Maintains the **source of truth**.
 - Writes are **synchronously** committed here.
 - ✅ Ensures **strong consistency**.
 
 
-#### 📖 Read Replicas (Secondary / Followers)
+### 📖 Read Replicas (Secondary / Followers)
 - Asynchronous copies of the primary database.
 - Used to **distribute read load** across multiple servers.
 - ⚠️ May lag behind the primary (eventual consistency).
@@ -493,7 +494,7 @@ Think of them like the **index of a book** — instead of scanning every page, y
 - ❌ Slower writes (INSERT/UPDATE/DELETE must update indexes).
 - ❌ More storage required.
 
-## 🌷 Choosing right Database for your Use Case
+# 🌷 Choosing right Database for your Use Case
 
 Selecting the right database depends on your **access patterns**, **consistency needs**, and **scale**.
 
@@ -510,7 +511,7 @@ Selecting the right database depends on your **access patterns**, **consistency 
 
 🔑 **Tip**: Design for your **read/write ratio**, **consistency vs availability**, and **schema flexibility** needs.
 
-For more details of Design Schema design and other best practices, Please check - [LLD DB Schema Designing](https://github.com/nitin-kumar-sde/Low-Level-Design/blob/main/README.md#-db-schema-designing)
+For more details of Database Schema Design and other best practices, Please check - [LLD DB Schema Designing](https://github.com/nitin-kumar-sde/Low-Level-Design/blob/main/README.md#-db-schema-designing)
 
 ---
 
