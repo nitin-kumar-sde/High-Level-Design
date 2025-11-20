@@ -797,7 +797,7 @@ Effective system design considers both scalability to manage growth and performa
 | **Resilience** | **Single Point of Failure** (SPOF).            | **Higher availability** (distributes risk).    |
 | **Best For** | Small-to-medium scale apps; non-distributed needs. | Large-scale, distributed, high-traffic systems. |
 
-[Read More →](https://www.geeksforgeeks.org/system-design/system-design-horizontal-and-vertical-scaling/)
+📊 Scalability is evaluated through systematic **load testing**, which measures how a system performs as traffic, concurrency, and data volume increase.
 
 ## ⚖️ Load Balancers
 
