@@ -17,7 +17,7 @@ Whether you're preparing for **system design interviews**, building your next **
 7. [💰 Caching](#-caching)
 8. [🌸 Bloom Filters](#-bloom-filters)
 9. [📉 Big Data Processing](#-big-data-processing)
-10. [🧮 Distributed System](#-consistent-hashing)
+10. [🧮 Distributed Systems](#-distributed-systems)
 11. [📈 Scalability & Performance](#-scalability--performance)
 12. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
 13. [🔐 Security & Authentication](#-security--authentication)
@@ -616,7 +616,71 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 
 ---
 
-# 🧮 Consistent Hashing
+# 🧮 Distributed Systems
+
+## ⏳ Distributed Transactions
+
+When a system spans multiple services or databases, ensuring all-or-nothing consistency becomes a real challenge. A single business action—like placing an order—may touch inventory, payment, and shipping services. If any one step fails, the entire operation must be safely rolled back.
+
+That’s where distributed transaction strategies come in.
+
+Below are the three most widely used approaches—each with different guarantees and trade-offs.
+
+### 🕒 Two-Phase Commit (2PC)
+
+Transaction is divided into 2 phases
+
+**📜Prepare phase** Coordinator asks all participants if they can commit.
+
+**🏠Commit phase** - If everyone agrees, the coordinator instructs them to commit; otherwise, rollback.
+
+#### ✅️ Pros
+
+- Strong consistency
+
+#### ❌ Cons
+
+- Coordinator becomes a single point of failure
+- Participants lock resources → reduced throughput
+
+
+### 💼 Three-Phase Commit (3PC)
+
+Transaction is divided into 3 phases - 
+
+- **Can-Commit**
+- **Pre-Commit**
+- **Commit**
+
+#### ✅️ Pros
+
+- Non-blocking in more scenarios.
+
+#### ❌ Cons
+
+- More network hops.
+- Still complex, less used in modern microservices.
+
+
+### 💰 Saga Pattern
+
+Breaks a long transaction into a series of local transactions, each with a compensating action in case of failure.
+
+
+#### ✅️ Pros
+
+- High availability and scalability
+- No locking of distributed resources
+- Works perfectly for microservices architectures
+
+#### ❌ Cons
+
+- Eventual consistency, not immediate
+- Requires careful design of compensating transactions
+- Debugging flows can be harder
+
+
+## ❄️ Consistent Hashing
 
 **Consistent Hashing** is a key technique used in distributed systems to distribute data across nodes **efficiently** and **dynamically** — especially when nodes are added or removed. Unlike traditional hashing, it minimizes **re-distribution of keys**, making it ideal for **scalable and fault-tolerant architectures**.
 
