@@ -881,9 +881,6 @@ To enforce access control policies, ensuring users can only perform actions and 
 
 [Read More on Security →](https://www.geeksforgeeks.org/system-design/essential-security-measures-in-system-design/)
 
-[Read More on Rate Limiting →](https://www.geeksforgeeks.org/system-design/rate-limiting-in-system-design/)
-
-
 ---
 
 
