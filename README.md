@@ -14,7 +14,7 @@ Whether you're preparing for **system design interviews**, building your next **
 4. [🛠 Asynchronous Processing](#-asynchronous-processing)
 5. [🎪 Architectural Paradigms](#-architectural-paradigms)
 6. [💾 Databases and Storage](#-databases)
-7. [💰 Caching Techniques](#-caching-techniques)
+7. [💰 Caching](#-caching-techniques)
 8. [🌸 Bloom Filters](#-bloom-filters)
 9. [🧮 Consistent Hashing](#-consistent-hashing)
 10. [📈 Scalability & Performance](#-scalability--performance)
@@ -515,7 +515,7 @@ For more details of Database Schema Design and other best practices, Please chec
 
 ---
 
-# 💰 Caching Techniques
+# 💰 Caching
 
 Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
 
@@ -531,12 +531,22 @@ Caching is a technique to store frequently accessed data in a fast-access storag
 | Cache Invalidation | Process of removing or updating stale cache entries when the source data changes |
 
 ## 🪙 Cache Population Strategies
-**Lazy Loading**
+
+**Lazy Loading/Read through**
 Cache is populated only on first request (miss) → then stored.
 
 **Eager Loading**
 - Server writes to DB and cache both
-- Asychronous system can populate cache 
+- Asychronous system can populate cache
+
+## 📊 Different Cache Population Strategy
+
+| Strategy        | How It Works | Write Speed | Read Performance | Data Safety | Use Cases | Drawbacks |
+|-----------------|--------------|-------------|------------------|-------------|-----------|-----------|
+| **Write-Through** | Data is written to cache **and** main memory at the same time. | Slow (every write goes to memory) | Good (cache always updated) | ⭐ Highest (data always consistent) | Systems needing strong durability (DBs, financial apps) | Higher write latency |
+| **Write-Back** | Data is written **only to cache**, and flushed to memory later. | ⭐ Fastest | Good, but stale if cache not flushed | Moderate (risk if cache fails before flush) | High-performance systems, CPU caches | Risk of data loss; more complex cache management |
+| **Write-Around** | Data is written **directly to memory**, bypassing the cache. | Medium | May reduce cache pollution; reads slower for recently written data | Good (memory holds truth) | Workloads with large sequential writes | First read after write causes a cache miss |
+
 
 ##  🗓️ Levels of Caching
 | Level                 | Example                         | Use Case                                        |
@@ -555,8 +565,6 @@ Cache is populated only on first request (miss) → then stored.
 | Consistent Hashing           | Smooth rebalancing during scale-up/down       |
 |Write-through / Write-behind | Control how writes sync with DB               |
 
-## 📘 Resources
-- [Caching Tutorial](https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01)
 
 ---
 
