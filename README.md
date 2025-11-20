@@ -185,7 +185,7 @@ These three pillars work in concert to deliver web content to you efficiently
 
 ---
 
-# 🛠 Asynchronous Processing 
+# 🔀 Asynchronous Processing 
 
 In high-performance, distributed systems, **asynchronous processing** is a foundational pattern that improves **responsiveness**, **scalability**, and **fault isolation** by offloading non-critical or time-intensive operations to background workflows.
 
@@ -194,11 +194,8 @@ Instead of executing every task inline (synchronously), asynchronous systems **d
 ## 🧠 Common Use Cases
 
 - **🎥 Time-Intensive Tasks** - Used when operations take too long to complete inline (e.g., file processing, ML inference).
-
 - **🤖 Background Jobs** - For tasks that don’t require immediate user feedback (e.g., sending emails, notifications).
-
 - **⌛ Load Buffering** - Helps absorb high traffic spikes and smooth load before hitting downstream systems.
-
 - **⚛︎ Service Decoupling** - Allows independent scaling, deployment, and failure isolation between producers and consumers.
 
 
@@ -263,11 +260,6 @@ It enables loose coupling, scalable fan-out, and real-time delivery, powering sy
 | [Reddis PubSub](https://redis.io/docs/latest/develop/interact/pubsub/) | Lightweight, in-memory pub/sub system for low-latency, ephemeral message delivery |
 | [Amazon SNS](https://aws.amazon.com/sns/) | Fully managed pub/sub service on AWS for real-time event broadcasting to multiple endpoints |
 
-## 📘 Resources
-
-- [Message Queues](https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22)
-- [Streams](https://medium.com/@abdullahjaffer96/low-level-data-design-part-4-stream-processing-b613be855743)
-- [Real time Pub Sub](https://aws.amazon.com/what-is/pub-sub-messaging/)
 
 
 ---
