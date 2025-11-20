@@ -16,7 +16,7 @@ Whether you're preparing for **system design interviews**, building your next **
 6. [💾 Databases and Storage](#-databases)
 7. [💰 Caching](#-caching)
 8. [🌸 Bloom Filters](#-bloom-filters)
-9. [⚙️ Big Data Processing)(#-big-data-processing)
+9. [📉 Big Data Processing](#-big-data-processing)
 10. [🧮 Distributed System](#-consistent-hashing)
 11. [📈 Scalability & Performance](#-scalability--performance)
 12. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
@@ -610,7 +610,7 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 
 ---
 
-# ⚙️ Big Data Processing
+# 📉 Big Data Processing
 
 ---
 
