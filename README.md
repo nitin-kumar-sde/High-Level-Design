@@ -14,7 +14,7 @@ Whether you're preparing for **system design interviews**, building your next **
 4. [🛠 Asynchronous Processing](#-asynchronous-processing)
 5. [🎪 Architectural Paradigms](#-architectural-paradigms)
 6. [💾 Databases and Storage](#-databases)
-7. [💰 Caching](#-caching-techniques)
+7. [💰 Caching](#-caching)
 8. [🌸 Bloom Filters](#-bloom-filters)
 9. [🧮 Consistent Hashing](#-consistent-hashing)
 10. [📈 Scalability & Performance](#-scalability--performance)
