@@ -16,15 +16,16 @@ Whether you're preparing for **system design interviews**, building your next **
 6. [💾 Databases and Storage](#-databases)
 7. [💰 Caching](#-caching)
 8. [🌸 Bloom Filters](#-bloom-filters)
-9. [🧮 Consistent Hashing](#-consistent-hashing)
-10. [📈 Scalability & Performance](#-scalability--performance)
-11. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
-12. [🔐 Security & Authentication](#-security--authentication)
-13. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
-14. [👁️ Observability & Monitoring](#-observability--monitoring)
-15. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
-16. [🛠 Practice Standard Interview Problems](#-practice-standard-interview-problems)
-17. [📚 Recommended Books](#-recommended-books)
+9. [⚙️ Big Data Processing)(#-big-data-processing)
+10. [🧮 Distributed System](#-consistent-hashing)
+11. [📈 Scalability & Performance](#-scalability--performance)
+12. [⛓️ Consistency, Availability, Partitioning (CAP)](#-consistency-availability-partitioning-cap)
+13. [🔐 Security & Authentication](#-security--authentication)
+14. [⛺ Fault Tolerance & Resiliency](#-fault-tolerance--resiliency)
+15. [👁️ Observability & Monitoring](#-observability--monitoring)
+16. [⚖️ Trade-Offs & Design Decisions](#-trade-offs--design-decisions)
+17. [🛠 Practice Standard Interview Problems](#-practice-standard-interview-problems)
+18. [📚 Recommended Books](#-recommended-books)
 
 ---
 
@@ -606,6 +607,10 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 > ⚠️ **Note** - Great for read-heavy systems, but not suitable when exact accuracy is required.
 
 [Read More →](https://www.geeksforgeeks.org/system-design/bloom-filters-in-system-design/)
+
+---
+
+# ⚙️ Big Data Processing
 
 ---
 
