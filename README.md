@@ -13,7 +13,7 @@ Whether you're preparing for **system design interviews**, building your next **
 3. [📡 Networking & Communication](#-networking--communication)
 4. [🛠 Asynchronous Processing](#-asynchronous-processing)
 5. [🎪 Architectural Paradigms](#-architectural-paradigms)
-6. [🛢️ Databases and Storage](#-databases)
+6. [💾 Databases and Storage](#-databases)
 7. [💰 Caching Techniques](#-caching-techniques)
 8. [🌸 Bloom Filters](#-bloom-filters)
 9. [🧮 Consistent Hashing](#-consistent-hashing)
@@ -350,7 +350,7 @@ A **centralized orchestrator (or "conductor" service)** explicitly controls and 
 
 ---
 
-# 🛢️ Databases
+# 💾 Databases
 
 **Database** is a structured collection of data that enables efficient storage, retrieval, modification, and management of information. Databases are at the core of nearly every backend architecture and directly influence scalability, consistency, and performance of distributed systems.
 
