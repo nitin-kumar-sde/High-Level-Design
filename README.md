@@ -264,7 +264,7 @@ It enables loose coupling, scalable fan-out, and real-time delivery, powering sy
 
 ---
 
-# 🎪 Architectural Paradigms
+# 🏛 Architectural Paradigms
 
 Choosing how to structure your application is a foundational decision in system design. It impacts everything from development speed and scalability to maintainability and team organization. Let's explore the primary architectural styles.
 
@@ -283,7 +283,7 @@ A monolithic application is built as a **single, tightly coupled, and indivisibl
 
 ## 🧩 Microservices Architecture 
 
-Microservices architecture designs an application as a **collection of small, independent, and loosely coupled services**, each representing a distinct business capability. They communicate over networks (APIs, messages) and can be developed, deployed, and scaled autonomously.
+Microservices architecture designs an application as a **collection of small, independent, and loosely coupled services**, each representing a distinct business capability. They communicate over networks (APIs, messages) and can be developed, deployed, and scaled independently.
 
 ### 💡 Key Characteristics
 
