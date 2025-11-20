@@ -350,115 +350,77 @@ A **centralized orchestrator (or "conductor" service)** explicitly controls and 
 
 ---
 
-# 💰 Caching Techniques
+# 🛢️ Databases
 
-Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
+**Database** is a structured collection of data that enables efficient storage, retrieval, modification, and management of information. Databases are at the core of nearly every backend architecture and directly influence scalability, consistency, and performance of distributed systems.
 
-[Learn More →](https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/)
+# 🎻 Types of Databases
 
-## 💎 Standard Terms
-| Term                 | Meaning                                              |
-| -------------------- | ---------------------------------------------------- |
-| Cache Hit        | Data found in the cache                              |
-| Cache Miss       | Data not found, fetched from source                  |
-| Cache Eviction   | Removing data when cache is full                     |
-| Cache Population | How data is loaded into cache (on demand or upfront) |
-| Cache Invalidation | Process of removing or updating stale cache entries when the source data changes |
-
-## 🪙 Cache Population Strategies
-**Lazy Loading**
-Cache is populated only on first request (miss) → then stored.
-
-**Eager Loading**
-- Server writes to DB and cache both
-- Asychronous system can populate cache 
-
-##  🗓️ Levels of Caching
-| Level                 | Example                         | Use Case                                        |
-| --------------------- | ------------------------------- | ----------------------------------------------- |
-| Client-Side       | Browser cache, localStorage     | Static assets, previous API results             |
-| CDN-Level         | Cloudflare, Akamai              | Images, videos, HTML – reduces edge latency     |
-| App/Service-Level | Redis, Memcached                | Frequently accessed DB results, config, session |
-| Database-Level    | Query cache, materialized views | Reduces expensive joins/aggregates              |
-
-## 🏵️ Scaling Distributed Caching
-| Strategy                         | Description                                   |
-| -------------------------------- | --------------------------------------------- |
-| Sharding                    | Divide cache across nodes (based on key hash) |
-| Replication             | Redundancy for high availability              |
-| TTL & Expiry            | Control staleness and memory usage            |
-| Consistent Hashing           | Smooth rebalancing during scale-up/down       |
-|Write-through / Write-behind | Control how writes sync with DB               |
-
-## 📘 Resources
-- [Caching Tutorial](https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01)
-
----
-
-# 👒 Databases
-
-Database is a structured collection of data that enables efficient storage, retrieval, modification, and management of information. Databases are at the core of nearly every backend architecture and directly influence scalability, consistency, and performance of distributed systems.
-
-## 🎻 Types of Databases
-
-### 🧱 Relational Databases (RDBMS)
+## 🧱 Relational/SQL Databases (RDBMS)
 - **Structure**: Tables with fixed schema (rows and columns).
 - **Examples**: MySQL, PostgreSQL, Oracle, SQL Server.
 - **Strengths**: Strong consistency, transactions (ACID), structured queries (SQL).
 - **Use Cases**: Financial systems
 
 
-### ⛲ NoSQL Databases
-A class of databases designed for specific data models and flexible schemas.
+## ⛲ NoSQL Databases
+A class of databases designed for flexible data models and schemas.
 
-#### 📝 Document Stores
+### 📝 Document Stores
 - **Structure**: JSON-like documents (flexible fields).
 - **Examples**: MongoDB
 - **Use Cases**: Content management, product catalogs.
 
-####  🗝️ Key-Value Stores
+###  🗝️ Key-Value Stores
 - **Structure**: Key ↔ Value pairs.
-- **Examples**:  DynamoDB.
+- **Examples**:  DynamoDB, Reddis.
 - **Use Cases**: Real-time high throughput data.
 
 
-####  🕸️ Graph Databases
+###  🕸️ Graph Databases
 - **Structure**: Nodes and edges representing entities and relationships.
-- **Examples**: AWS Neptune.
+- **Examples**: AWS Neptune, Neo4j.
 - **Use Cases**: Social networks, recommendation systems, fraud detection.
 
 
-## 🗽 Transactions & ACID Properties
+# 🗽 Transactions & ACID Properties
 
-### 🗼 Transaction
+## 🗼 Transaction
 A **transaction** is a sequence of one or more operations performed as a **single logical unit of work**. 
 
 It must be **all-or-nothing**: either every operation succeeds, or none of them does.
 
+## 🧪 ACID Properties
 
-### 🧪 ACID Properties
+ACID ensures the reliability and integrity of database transactions - 
 
-ACID ensures the reliability and integrity of database transactions:
-
-#### ✂️ Atomicity
-- Guarantees that **all operations** in a transaction are completed.
+### ✂️ Atomicity
+- Guarantees that **all operations** in a transaction are completed or None.
 - If any operation fails, the **entire transaction is rolled back**.
 - 👉 Deducting money from one account and adding to another.
 
-#### 📊 Consistency
+### 📊 Consistency
 - Ensures the database moves from **one valid state to another**.
 - All **constraints, rules, and triggers** are maintained.
-- 👉 No transaction can leave the database in a corrupt state.
+- 👉 No transaction can leave the database in a corrupt state i.e. total sum of money should be consistent.
 
-#### ⏳ Isolation
+### ⏳ Isolation
 - Ensures **concurrent transactions** don't interfere with each other.
 - Transactions appear to run **serially**, even if executed in parallel.
 - 👉 Prevents dirty reads, non-repeatable reads, and phantom reads.
+- Different Isolation Levels - Repeatable Reads, Read Committed, Read Uncommitted, Serialisable.
 
-#### 📦 Durability
+### 📦 Durability
 - Once a transaction is **committed**, its changes are **permanent**.
 - Survives power failures, crashes, or system shutdowns.
-- 👉 Data is persisted to disk/log before commit is acknowledged.
+- 👉 Data is persisted to disk/log after commit is acknowledged.
+
+| Isolation Level      | Prevents Dirty Reads | Prevents Non-Repeatable Reads | Prevents Phantom Reads | Typical Concurrency | Notes |
+|----------------------|----------------------|-------------------------------|-------------------------|----------------------|-------|
+| Read Uncommitted     | ❌ No                | ❌ No                          | ❌ No                    | ⭐ Highest            | Rarely used; allows reading uncommitted data. |
+| Read Committed       | ✅ Yes               | ❌ No                          | ❌ No                    | High                 | Most common default (e.g., Oracle, Postgres). |
+| Repeatable Read      | ✅ Yes               | ✅ Yes                         | ❌ No*                   | Medium               | MySQL InnoDB prevents phantoms using MVCC, but ANSI says phantoms still possible. |
+| Serializable         | ✅ Yes               | ✅ Yes                         | ✅ Yes                   | Low                  | Highest correctness; acts like transactions are serial. |
 
 
 ## 🚀 Database Scaling
@@ -549,6 +511,51 @@ Selecting the right database depends on your **access patterns**, **consistency 
 🔑 **Tip**: Design for your **read/write ratio**, **consistency vs availability**, and **schema flexibility** needs.
 
 For more details of Design Schema design and other best practices, Please check - [LLD DB Schema Designing](https://github.com/nitin-kumar-sde/Low-Level-Design/blob/main/README.md#-db-schema-designing)
+
+---
+
+# 💰 Caching Techniques
+
+Caching is a technique to store frequently accessed data in a fast-access storage layer (memory or disk) to reduce latency and offload backend systems.
+
+[Learn More →](https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/)
+
+## 💎 Standard Terms
+| Term                 | Meaning                                              |
+| -------------------- | ---------------------------------------------------- |
+| Cache Hit        | Data found in the cache                              |
+| Cache Miss       | Data not found, fetched from source                  |
+| Cache Eviction   | Removing data when cache is full                     |
+| Cache Population | How data is loaded into cache (on demand or upfront) |
+| Cache Invalidation | Process of removing or updating stale cache entries when the source data changes |
+
+## 🪙 Cache Population Strategies
+**Lazy Loading**
+Cache is populated only on first request (miss) → then stored.
+
+**Eager Loading**
+- Server writes to DB and cache both
+- Asychronous system can populate cache 
+
+##  🗓️ Levels of Caching
+| Level                 | Example                         | Use Case                                        |
+| --------------------- | ------------------------------- | ----------------------------------------------- |
+| Client-Side       | Browser cache, localStorage     | Static assets, previous API results             |
+| CDN-Level         | Cloudflare, Akamai              | Images, videos, HTML – reduces edge latency     |
+| App/Service-Level | Redis, Memcached                | Frequently accessed DB results, config, session |
+| Database-Level    | Query cache, materialized views | Reduces expensive joins/aggregates              |
+
+## 🏵️ Scaling Distributed Caching
+| Strategy                         | Description                                   |
+| -------------------------------- | --------------------------------------------- |
+| Sharding                    | Divide cache across nodes (based on key hash) |
+| Replication             | Redundancy for high availability              |
+| TTL & Expiry            | Control staleness and memory usage            |
+| Consistent Hashing           | Smooth rebalancing during scale-up/down       |
+|Write-through / Write-behind | Control how writes sync with DB               |
+
+## 📘 Resources
+- [Caching Tutorial](https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01)
 
 ---
 
