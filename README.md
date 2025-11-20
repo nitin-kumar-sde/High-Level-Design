@@ -618,7 +618,7 @@ A **Bloom Filter** is a **space-efficient probabilistic data structure** used to
 
 # 🧮 Distributed Systems
 
-## ⏳ Distributed Transactions
+# ⏳ Distributed Transactions
 
 When a system spans multiple services or databases, ensuring all-or-nothing consistency becomes a real challenge. A single business action—like placing an order—may touch inventory, payment, and shipping services. If any one step fails, the entire operation must be safely rolled back.
 
@@ -681,7 +681,7 @@ Breaks a long transaction into a series of local transactions, each with a compe
 - Debugging flows can be harder
 
 
-## ❄️ Consistent Hashing
+# ❄️ Consistent Hashing
 
 **Consistent Hashing** is a key technique used in distributed systems to distribute data across nodes **efficiently** and **dynamically** — especially when nodes are added or removed. Unlike traditional hashing, it minimizes **re-distribution of keys**, making it ideal for **scalable and fault-tolerant architectures**.
 
